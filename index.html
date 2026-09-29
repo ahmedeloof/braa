@@ -2,534 +2,1090 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>FIFA World Cup 2026</title>
+<title>FIFA World Cup 2026</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+<style>
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #f4f6f8;
-            color: #222;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        /* Header */
-        header {
-            min-height: 320px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#07111f;
+    color:white;
+}
 
-            background:
-                linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
-                url("https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1600&q=80");
+/* ================= HEADER ================= */
 
-            background-size: cover;
-            background-position: center;
-        }
+header{
+    background:linear-gradient(135deg,#07111f,#102c4a);
+    padding:20px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:100;
+    border-bottom:1px solid #24405c;
+}
 
-        header h1 {
-            font-size: 52px;
-            margin-bottom: 15px;
-        }
+.logo{
+    font-size:26px;
+    font-weight:bold;
+}
 
-        header p {
-            font-size: 20px;
-        }
+.logo span{
+    color:#20e6a8;
+}
 
-        /* Navigation */
-        nav {
-            background: #111827;
-            padding: 15px;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-        }
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:25px;
+    font-weight:bold;
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-        }
+nav a:hover{
+    color:#20e6a8;
+}
 
-        nav a:hover {
-            color: #38bdf8;
-        }
+/* ================= HERO ================= */
 
-        /* Main */
-        .container {
-            max-width: 1100px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
+.hero{
+    min-height:420px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
 
-        .section-title {
-            text-align: center;
-            margin-bottom: 25px;
-            font-size: 32px;
-        }
+    background:
+    linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.75)),
+    url("https://images.unsplash.com/photo-1579952363873-27f3bade9f55")
+    center/cover;
+}
 
-        /* Cards */
-        .matches {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
+.hero h1{
+    font-size:64px;
+    margin-bottom:15px;
+}
 
-        .match-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 18px rgba(0,0,0,.1);
-            transition: .3s;
-        }
+.hero p{
+    font-size:20px;
+    color:#d4dce5;
+}
 
-        .match-card:hover {
-            transform: translateY(-5px);
-        }
+.hero button{
+    margin-top:25px;
+    padding:14px 30px;
+    border:none;
+    border-radius:30px;
+    background:#20e6a8;
+    font-weight:bold;
+    cursor:pointer;
+}
 
-        .match-image {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-        }
+/* ================= CONTAINER ================= */
 
-        .match-content {
-            padding: 20px;
-            text-align: center;
-        }
+.container{
+    width:90%;
+    max-width:1300px;
+    margin:auto;
+}
 
-        .date {
-            color: #777;
-            margin-bottom: 15px;
-            font-size: 14px;
-        }
+/* ================= SECTION ================= */
 
-        .teams {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 10px;
-        }
+section{
+    padding:55px 0;
+}
 
-        .team {
-            flex: 1;
-            font-weight: bold;
-        }
+.section-title{
+    font-size:32px;
+    margin-bottom:25px;
+}
 
-        .team img {
-            width: 55px;
-            height: 35px;
-            object-fit: cover;
-            display: block;
-            margin: 0 auto 8px;
-            border-radius: 4px;
-        }
+.section-title span{
+    color:#20e6a8;
+}
 
-        .score {
-            font-size: 28px;
-            font-weight: bold;
-            min-width: 70px;
-        }
+/* ================= FILTER ================= */
 
-        .competition {
-            margin-top: 15px;
-            display: inline-block;
-            padding: 6px 12px;
-            background: #e5e7eb;
-            border-radius: 20px;
-            font-size: 13px;
-        }
+.filters{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-bottom:30px;
+}
 
-        /* Champion */
-        .champion {
-            margin-top: 50px;
-            padding: 45px 20px;
-            text-align: center;
-            border-radius: 20px;
+.filter-btn{
+    padding:10px 18px;
+    border:1px solid #31516f;
+    background:#0d1b2b;
+    color:white;
+    border-radius:20px;
+    cursor:pointer;
+}
 
-            background:
-                linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.65)),
-                url("https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1600&q=80");
+.filter-btn.active,
+.filter-btn:hover{
+    background:#20e6a8;
+    color:#06121f;
+}
 
-            background-size: cover;
-            color: white;
-        }
+/* ================= SEARCH ================= */
 
-        .champion h2 {
-            font-size: 40px;
-            margin-bottom: 15px;
-        }
+.search{
+    width:100%;
+    padding:15px;
+    margin-bottom:30px;
+    border:none;
+    border-radius:10px;
+    background:#102236;
+    color:white;
+    font-size:16px;
+}
 
-        .champion p {
-            font-size: 20px;
-        }
+/* ================= MATCH GRID ================= */
 
-        /* Footer */
-        footer {
-            margin-top: 60px;
-            background: #111827;
-            color: white;
-            text-align: center;
-            padding: 25px;
-        }
+.matches{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(300px,1fr));
+    gap:20px;
+}
 
-        @media(max-width:600px) {
-            header h1 {
-                font-size: 36px;
-            }
+/* ================= MATCH CARD ================= */
 
-            .teams {
-                gap: 5px;
-            }
+.match-card{
+    background:linear-gradient(145deg,#0d1c2d,#122940);
+    border:1px solid #203c58;
+    border-radius:18px;
+    padding:22px;
+    transition:.3s;
+}
 
-            .score {
-                font-size: 22px;
-            }
-        }
-    </style>
+.match-card:hover{
+    transform:translateY(-7px);
+    border-color:#20e6a8;
+    box-shadow:0 15px 40px rgba(0,0,0,.3);
+}
+
+.match-header{
+    display:flex;
+    justify-content:space-between;
+    color:#8fa7bd;
+    font-size:13px;
+    margin-bottom:20px;
+}
+
+.teams{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    text-align:center;
+}
+
+.team{
+    width:40%;
+}
+
+.team img{
+    width:70px;
+    height:50px;
+    object-fit:contain;
+    margin-bottom:10px;
+}
+
+.team-name{
+    font-weight:bold;
+}
+
+.score{
+    font-size:32px;
+    font-weight:bold;
+}
+
+.final{
+    color:#20e6a8;
+    font-size:12px;
+    margin-top:5px;
+}
+
+/* ================= TABLE ================= */
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:#0d1c2d;
+    border-radius:15px;
+    overflow:hidden;
+}
+
+th,td{
+    padding:15px;
+    text-align:center;
+    border-bottom:1px solid #20384f;
+}
+
+th{
+    background:#102b45;
+    color:#20e6a8;
+}
+
+/* ================= GROUPS ================= */
+
+.groups{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+}
+
+.group{
+    background:#0d1c2d;
+    border:1px solid #203c58;
+    border-radius:15px;
+    overflow:hidden;
+}
+
+.group h3{
+    padding:18px;
+    background:#102b45;
+    color:#20e6a8;
+}
+
+/* ================= KNOCKOUT ================= */
+
+.bracket{
+    display:grid;
+    grid-template-columns:
+    repeat(4,1fr);
+    gap:20px;
+    overflow-x:auto;
+}
+
+.round{
+    min-width:220px;
+}
+
+.round h3{
+    color:#20e6a8;
+    margin-bottom:15px;
+}
+
+.bracket-match{
+    background:#102236;
+    border:1px solid #294963;
+    border-radius:12px;
+    padding:15px;
+    margin-bottom:20px;
+}
+
+.bracket-team{
+    display:flex;
+    justify-content:space-between;
+    padding:6px;
+}
+
+/* ================= STATS ================= */
+
+.stats{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+}
+
+.stat{
+    background:#0d1c2d;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.stat h2{
+    font-size:38px;
+    color:#20e6a8;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#040a12;
+    padding:40px;
+    text-align:center;
+    color:#8193a5;
+}
+
+/* ================= THEMES ================= */
+
+body.red-theme{
+    --accent:#ff4b5c;
+}
+
+body.blue-theme{
+    --accent:#38bdf8;
+}
+
+body.gold-theme{
+    --accent:#f5c542;
+}
+
+body.red-theme .filter-btn.active,
+body.red-theme .hero button{
+    background:#ff4b5c;
+}
+
+body.blue-theme .filter-btn.active,
+body.blue-theme .hero button{
+    background:#38bdf8;
+}
+
+body.gold-theme .filter-btn.active,
+body.gold-theme .hero button{
+    background:#f5c542;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:700px){
+
+    header{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav a{
+        margin:5px;
+        font-size:13px;
+    }
+
+    .hero h1{
+        font-size:40px;
+    }
+
+    .bracket{
+        grid-template-columns:repeat(4,220px);
+    }
+}
+
+</style>
 </head>
 
 <body>
 
+<!-- HEADER -->
+
 <header>
-    <h1>FIFA World Cup 2026</h1>
-    <p>Canada • Mexico • United States</p>
-</header>
+
+<div class="logo">
+⚽ <span>WORLD CUP</span> 2026
+</div>
 
 <nav>
-    <a href="#matches">Matches</a>
-    <a href="#egypt">Egypt</a>
-    <a href="#final">Final</a>
+<a href="#matches">Matches</a>
+<a href="#groups">Groups</a>
+<a href="#bracket">Bracket</a>
+<a href="#stats">Stats</a>
 </nav>
 
+</header>
 
-<main class="container">
 
-    <!-- Matches -->
-    <section id="matches">
+<!-- HERO -->
 
-        <h2 class="section-title">
-            Latest Results
-        </h2>
+<div class="hero">
 
-        <div class="matches">
+<div>
 
-            <!-- Match 1 -->
-            <div class="match-card">
+<h1>FIFA WORLD CUP 2026</h1>
 
-                <img
-                    class="match-image"
-                    src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=800&q=80"
-                    alt="Football stadium">
+<p>
+Canada 🇨🇦 • Mexico 🇲🇽 • USA 🇺🇸
+</p>
 
-                <div class="match-content">
+<button onclick="document.getElementById('matches').scrollIntoView()">
+VIEW MATCHES
+</button>
 
-                    <div class="date">
-                        July 19, 2026
-                    </div>
+</div>
 
-                    <div class="teams">
+</div>
 
-                        <div class="team">
-                            <img src="https://flagcdn.com/w80/es.png">
-                            Spain
-                        </div>
 
-                        <div class="score">
-                            1 - 0
-                        </div>
+<!-- MATCHES -->
 
-                        <div class="team">
-                            <img src="https://flagcdn.com/w80/ar.png">
-                            Argentina
-                        </div>
+<section id="matches">
 
-                    </div>
+<div class="container">
 
-                    <span class="competition">
-                        FINAL
-                    </span>
+<h2 class="section-title">
+Latest <span>Results</span>
+</h2>
 
-                </div>
-            </div>
+<input
+class="search"
+id="search"
+placeholder="🔎 Search team..."
+>
 
+<div class="filters">
 
-            <!-- Match 2 -->
-            <div class="match-card">
+<button class="filter-btn active"
+onclick="filterMatches('all',this)">
+All
+</button>
 
-                <img
-                    class="match-image"
-                    src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=800&q=80"
-                    alt="Football">
+<button class="filter-btn"
+onclick="filterMatches('group',this)">
+Group Stage
+</button>
 
-                <div class="match-content">
+<button class="filter-btn"
+onclick="filterMatches('round32',this)">
+Round of 32
+</button>
 
-                    <div class="date">
-                        July 15, 2026
-                    </div>
+<button class="filter-btn"
+onclick="filterMatches('round16',this)">
+Round of 16
+</button>
 
-                    <div class="teams">
+<button class="filter-btn"
+onclick="filterMatches('quarter',this)">
+Quarter-finals
+</button>
 
-                        <div class="team">
-                            <img src="https://flagcdn.com/w80/gb.png">
-                            England
-                        </div>
+<button class="filter-btn"
+onclick="filterMatches('semi',this)">
+Semi-finals
+</button>
 
-                        <div class="score">
-                            1 - 2
-                        </div>
+<button class="filter-btn"
+onclick="filterMatches('final',this)">
+Final
+</button>
 
-                        <div class="team">
-                            <img src="https://flagcdn.com/w80/ar.png">
-                            Argentina
-                        </div>
+</div>
 
-                    </div>
 
-                    <span class="competition">
-                        SEMI-FINAL
-                    </span>
+<div class="matches" id="matchContainer"></div>
 
-                </div>
-            </div>
+</div>
 
+</section>
 
-            <!-- Match 3 -->
-            <div class="match-card">
 
-                <img
-                    class="match-image"
-                    src="https://images.unsplash.com/photo-1553778263-73a83bab9b0c?auto=format&fit=crop&w=800&q=80"
-                    alt="Football match">
+<!-- GROUPS -->
 
-                <div class="match-content">
+<section id="groups">
 
-                    <div class="date">
-                        July 14, 2026
-                    </div>
+<div class="container">
 
-                    <div class="teams">
+<h2 class="section-title">
+World Cup <span>Groups</span>
+</h2>
 
-                        <div class="team">
-                            <img src="https://flagcdn.com/w80/fr.png">
-                            France
-                        </div>
+<div class="groups">
 
-                        <div class="score">
-                            0 - 2
-                        </div>
+<div class="group">
 
-                        <div class="team">
-                            <img src="https://flagcdn.com/w80/es.png">
-                            Spain
-                        </div>
+<h3>Group A</h3>
 
-                    </div>
+<table>
 
-                    <span class="competition">
-                        SEMI-FINAL
-                    </span>
+<tr>
+<th>#</th>
+<th>Team</th>
+<th>Pts</th>
+</tr>
 
-                </div>
-            </div>
+<tr>
+<td>1</td>
+<td>🇲🇽 Mexico</td>
+<td>7</td>
+</tr>
 
+<tr>
+<td>2</td>
+<td>🇰🇷 Korea Republic</td>
+<td>4</td>
+</tr>
 
-            <!-- Match 4 -->
-            <div class="match-card">
+<tr>
+<td>3</td>
+<td>🇿🇦 South Africa</td>
+<td>4</td>
+</tr>
 
-                <img
-                    class="match-image"
-                    src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=800&q=80"
-                    alt="Football">
+<tr>
+<td>4</td>
+<td>🇨🇿 Czechia</td>
+<td>1</td>
+</tr>
 
-                <div class="match-content">
+</table>
 
-                    <div class="date">
-                        July 7, 2026
-                    </div>
+</div>
 
-                    <div class="teams">
 
-                        <div class="team">
-                            <img src="https://flagcdn.com/w80/ar.png">
-                            Argentina
-                        </div>
+<div class="group">
 
-                        <div class="score">
-                            3 - 2
-                        </div>
+<h3>Group G</h3>
 
-                        <div class="team">
-                            <img src="https://flagcdn.com/w80/eg.png">
-                            Egypt
-                        </div>
+<table>
 
-                    </div>
+<tr>
+<th>#</th>
+<th>Team</th>
+<th>Pts</th>
+</tr>
 
-                    <span class="competition">
-                        ROUND OF 16
-                    </span>
+<tr>
+<td>1</td>
+<td>🇧🇪 Belgium</td>
+<td>7</td>
+</tr>
 
-                </div>
-            </div>
+<tr>
+<td>2</td>
+<td>🇪🇬 Egypt</td>
+<td>5</td>
+</tr>
 
+<tr>
+<td>3</td>
+<td>🇮🇷 Iran</td>
+<td>3</td>
+</tr>
 
-            <!-- Match 5 -->
-            <div class="match-card">
+<tr>
+<td>4</td>
+<td>🇳🇿 New Zealand</td>
+<td>1</td>
+</tr>
 
-                <img
-                    class="match-image"
-                    src="https://images.unsplash.com/photo-1560272564-c83b66b1ad12?auto=format&fit=crop&w=800&q=80"
-                    alt="Football stadium">
+</table>
 
-                <div class="match-content">
+</div>
 
-                    <div class="date">
-                        July 3, 2026
-                    </div>
 
-                    <div class="teams">
+<div class="group">
 
-                        <div class="team">
-                            <img src="https://flagcdn.com/w80/au.png">
-                            Australia
-                        </div>
+<h3>Group J</h3>
 
-                        <div class="score">
-                            1 - 1
-                        </div>
+<table>
 
-                        <div class="team">
-                            <img src="https://flagcdn.com/w80/eg.png">
-                            Egypt
-                        </div>
+<tr>
+<th>#</th>
+<th>Team</th>
+<th>Pts</th>
+</tr>
 
-                    </div>
+<tr>
+<td>1</td>
+<td>🇦🇷 Argentina</td>
+<td>9</td>
+</tr>
 
-                    <span class="competition">
-                        ROUND OF 32 • Egypt won 4-2 on penalties
-                    </span>
+<tr>
+<td>2</td>
+<td>🇦🇹 Austria</td>
+<td>4</td>
+</tr>
 
-                </div>
-            </div>
+<tr>
+<td>3</td>
+<td>🇩🇿 Algeria</td>
+<td>4</td>
+</tr>
 
+<tr>
+<td>4</td>
+<td>🇯🇴 Jordan</td>
+<td>0</td>
+</tr>
 
-            <!-- Match 6 -->
-            <div class="match-card">
+</table>
 
-                <img
-                    class="match-image"
-                    src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=800&q=80"
-                    alt="Football">
+</div>
 
-                <div class="match-content">
+</div>
 
-                    <div class="date">
-                        June 27, 2026
-                    </div>
+</div>
 
-                    <div class="teams">
+</section>
 
-                        <div class="team">
-                            <img src="https://flagcdn.com/w80/eg.png">
-                            Egypt
-                        </div>
 
-                        <div class="score">
-                            1 - 1
-                        </div>
+<!-- KNOCKOUT -->
 
-                        <div class="team">
-                            <img src="https://flagcdn.com/w80/ir.png">
-                            Iran
-                        </div>
+<section id="bracket">
 
-                    </div>
+<div class="container">
 
-                    <span class="competition">
-                        GROUP G
-                    </span>
+<h2 class="section-title">
+Knockout <span>Bracket</span>
+</h2>
 
-                </div>
-            </div>
+<div class="bracket">
 
-        </div>
-    </section>
 
+<div class="round">
 
-    <!-- Egypt -->
-    <section id="egypt">
+<h3>Quarter-finals</h3>
 
-        <div class="champion">
+<div class="bracket-match">
 
-            <h2>🇪🇬 Egypt</h2>
+<div class="bracket-team">
+France 🇫🇷
+<b>2</b>
+</div>
 
-            <p>
-                Egypt reached the Round of 16 after defeating Australia
-                on penalties.
-            </p>
+<div class="bracket-team">
+Morocco 🇲🇦
+<b>0</b>
+</div>
 
-        </div>
+</div>
 
-    </section>
 
+<div class="bracket-match">
 
-    <!-- Final -->
-    <section id="final">
+<div class="bracket-team">
+Spain 🇪🇸
+<b>2</b>
+</div>
 
-        <div class="champion">
+<div class="bracket-team">
+Belgium 🇧🇪
+<b>1</b>
+</div>
 
-            <h2>🏆 World Cup Final</h2>
+</div>
 
-            <p>
-                🇪🇸 Spain 1 - 0 Argentina 🇦🇷
-            </p>
 
-            <br>
+<div class="bracket-match">
 
-            <p>
-                Spain are the FIFA World Cup 2026 Champions.
-            </p>
+<div class="bracket-team">
+Norway 🇳🇴
+<b>1</b>
+</div>
 
-        </div>
+<div class="bracket-team">
+England 🏴
+<b>2</b>
+</div>
 
-    </section>
+</div>
 
-</main>
+
+<div class="bracket-match">
+
+<div class="bracket-team">
+Argentina 🇦🇷
+<b>3</b>
+</div>
+
+<div class="bracket-team">
+Switzerland 🇨🇭
+<b>1</b>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="round">
+
+<h3>Semi-finals</h3>
+
+<div class="bracket-match">
+
+<div class="bracket-team">
+France 🇫🇷
+<b>0</b>
+</div>
+
+<div class="bracket-team">
+Spain 🇪🇸
+<b>2</b>
+</div>
+
+</div>
+
+
+<div class="bracket-match">
+
+<div class="bracket-team">
+England 🏴
+<b>1</b>
+</div>
+
+<div class="bracket-team">
+Argentina 🇦🇷
+<b>2</b>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="round">
+
+<h3>Final</h3>
+
+<div class="bracket-match">
+
+<div class="bracket-team">
+Spain 🇪🇸
+<b>1</b>
+</div>
+
+<div class="bracket-team">
+Argentina 🇦🇷
+<b>0</b>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="round">
+
+<h3>Champion</h3>
+
+<div class="bracket-match"
+style="text-align:center">
+
+<div style="font-size:70px">
+🏆
+</div>
+
+<h2>Spain 🇪🇸</h2>
+
+<p>World Cup 2026</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- STATS -->
+
+<section id="stats">
+
+<div class="container">
+
+<h2 class="section-title">
+Tournament <span>Stats</span>
+</h2>
+
+<div class="stats">
+
+<div class="stat">
+<h2>104</h2>
+<p>Matches</p>
+</div>
+
+<div class="stat">
+<h2>48</h2>
+<p>Teams</p>
+</div>
+
+<div class="stat">
+<h2>16</h2>
+<p>Host Cities</p>
+</div>
+
+<div class="stat">
+<h2>1</h2>
+<p>Champion</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
 
 
 <footer>
 
-    <p>
-        FIFA World Cup 2026 - Demo Website
-    </p>
+<p>
+FIFA World Cup 2026 Website Demo
+</p>
 
-    <p>
-        Built with HTML & CSS
-    </p>
+<p>
+Canada 🇨🇦 Mexico 🇲🇽 USA 🇺🇸
+</p>
 
 </footer>
 
 
 <script>
 
-    console.log("FIFA World Cup 2026 Website Loaded");
+/* ================= MATCH DATA ================= */
 
-</script>
+const matches = [
 
-</body>
-</html>
+{
+team1:"Mexico",
+flag1:"🇲🇽",
+team2:"South Africa",
+flag2:"🇿🇦",
+score:"2 - 0",
+stage:"group",
+date:"11 June 2026"
+},
+
+{
+team1:"Brazil",
+flag1:"🇧🇷",
+team2:"Morocco",
+flag2:"🇲🇦",
+score:"1 - 1",
+stage:"group",
+date:"13 June 2026"
+},
+
+{
+team1:"Belgium",
+flag1:"🇧🇪",
+team2:"Egypt",
+flag2:"🇪🇬",
+score:"1 - 1",
+stage:"group",
+date:"15 June 2026"
+},
+
+{
+team1:"Egypt",
+flag1:"🇪🇬",
+team2:"Iran",
+flag2:"🇮🇷",
+score:"1 - 1",
+stage:"group",
+date:"27 June 2026"
+},
+
+{
+team1:"Australia",
+flag1:"🇦🇺",
+team2:"Egypt",
+flag2:"🇪🇬",
+score:"1 - 1",
+stage:"round32",
+date:"3 July 2026"
+},
+
+{
+team1:"Argentina",
+flag1:"🇦🇷",
+team2:"Egypt",
+flag2:"🇪🇬",
+score:"3 - 2",
+stage:"round16",
+date:"7 July 2026"
+},
+
+{
+team1:"France",
+flag1:"🇫🇷",
+team2:"Morocco",
+flag2:"🇲🇦",
+score:"2 - 0",
+stage:"quarter",
+date:"9 July 2026"
+},
+
+{
+team1:"Spain",
+flag1:"🇪🇸",
+team2:"Belgium",
+flag2:"🇧🇪",
+score:"2 - 1",
+stage:"quarter",
+date:"10 July 2026"
+},
+
+{
+team1:"France",
+flag1:"🇫🇷",
+team2:"Spain",
+flag2:"🇪🇸",
+score:"0 - 2",
+stage:"semi",
+date:"14 July 2026"
+},
+
+{
+team1:"England",
+flag1:"🏴",
+team2:"Argentina",
+flag2:"🇦🇷",
+score:"1 - 2",
+stage:"semi",
+date:"15 July 2026"
+},
+
+{
+team1:"Spain",
+flag1:"🇪🇸",
+team2:"Argentina",
+flag2:"🇦🇷",
+score:"1 - 0",
+stage:"final",
+date:"19 July 2026"
+}
+
+];
+
+
+/* ================= DISPLAY ================= */
+
+function displayMatches(list){
+
+const container =
+document.getElementById("matchContainer");
+
+container.innerHTML="";
+
+list.forEach(match=>{
+
+container.innerHTML += `
+
+<div class="match-card">
+
+<div class="match-header">
+
+<span>${match.date}</span>
+
+<span>${stageName(match.stage)}</span>
+
+</div>
+
+<div class="teams">
+
+<div class="team">
+
+<div style="font-size:45px">
+${match.flag1}
+</div>
+
+<div class="team-name">
+${match.team1}
+</div>
+
+</div>
+
+<div>
+
+<div class="score">
+${match.score}
+</div>
+
+<div class="final">
+FINAL
+</div>
+
+</div>
+
+<div class="team">
+
+<div style="font-size:45px">
+${match.flag2}
+</div>
+
+<div class="team-name">
+${match.team2}
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+}
+
+
+/* ================= STAGE NAME ================= */
+
+function stageName(stage){
+
+const names={
+
+group:"Group Stage",
+round32:"Round of 32",
+round16:"Round of 16",
+quarter:"Quarter-final",
+semi:"Semi-final",
+final:"Final"
+
+};
+
+return names[stage];
+
+}
+
+
+/* ================= FILTER ================= */
+
+function filterMatches(stage,button){
+
+document
+.querySelectorAll(".filter-btn")
+.forEach(btn =>
+btn.classList.remove("active")
+);
+
+button.classList.add("active");
+
+if(stage==="all"){
+
+displayMatches(matches);
+
+}else{
+
+displayMatches(
+matches.filter(m => m.stage===stage)
+);
+
+}
+
+}
+
+
+/* ================= SEARCH ================= */
+
+document
+.getElementById("search")
+.addEventListener("input",function(){
+
+const value =
+this.value.toLowerCase();
+
+displayMatches(
+
+matches.filter(m =>
+
+m.team1.toLowerCase().includes(value)
 ```
