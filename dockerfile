@@ -1,3 +1,3 @@
 from httpd
 
-copy html.index /user /local/apashe2/htdocs
+copy index.html /usr/local/apashe2/htdocs/
