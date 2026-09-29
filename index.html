@@ -4,32 +4,68 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>FIFA World Cup 2026 - 104 Matches</title>
+<title>World Cup 2026 Ultimate</title>
 
 <style>
 :root{
-  --primary:#1677ff;
-  --secondary:#6c5ce7;
-  --bg:#f3f6fb;
-  --card:#fff;
-  --text:#172033;
-  --muted:#718096;
-  --border:#e2e8f0;
-  --danger:#ef4444;
-  --success:#10b981;
-  --warning:#f59e0b;
-  --shadow:0 8px 25px rgba(20,40,80,.08);
+ --p:#1877f2;
+ --s:#7c3aed;
+ --bg:#f4f7fb;
+ --card:#fff;
+ --text:#172033;
+ --muted:#718096;
+ --border:#e3e8f0;
+ --green:#10b981;
+ --red:#ef4444;
+ --yellow:#f59e0b;
+ --shadow:0 10px 30px rgba(20,40,80,.08);
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
 
 body{
-  font-family:Arial,Helvetica,sans-serif;
-  background:var(--bg);
-  color:var(--text);
+ font-family:Inter,Arial,sans-serif;
+ background:var(--bg);
+ color:var(--text);
+ transition:.25s;
 }
 
 body.dark{
-  --bg:#0b1220;
-  --card:#151e2e;
+ --bg:#080f1d;
+ --card:#121b2b;
+ --text:#f4f7fb;
+ --muted:#9aa8bd;
+ --border:#29374d;
+ --shadow:0 10px 30px rgba(0,0,0,.3);
+}
+
+body.theme-purple{--p:#7c3aed;--s:#ec4899}
+body.theme-red{--p:#e11d48;--s:#f97316}
+body.theme-green{--p:#059669;--s:#84cc16}
+body.theme-gold{--p:#b7791f;--s:#eab308}
+body.theme-cyan{--p:#0891b2;--s:#2563eb}
+body.theme-orange{--p:#ea580c;--s:#dc2626}
+body.theme-pink{--p:#db2777;--s:#8b5cf6}
+body.theme-black{--p:#111827;--s:#374151}
+
+button,input,select{
+ font:inherit;
+}
+
+button{
+ cursor:pointer;
+}
+
+.layout{
+ min-height:100vh;
+ display:flex;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+ width:255px;
+ position:fixed;
+ left:0;
+ t
 ```
