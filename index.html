@@ -67,5 +67,3426 @@ button{
  width:255px;
  position:fixed;
  left:0;
- t
+ top:0;
+ bottom:0;
+ background:var(--card);
+ border-right:1px solid var(--border);
+ padding:18px 13px;
+ z-index:100;
+ overflow-y:auto;
+}
+
+.logo{
+ display:flex;
+ align-items:center;
+ gap:10px;
+ padding:5px 8px 25px;
+}
+
+.logo-ball{
+ width:45px;
+ height:45px;
+ border-radius:14px;
+ display:grid;
+ place-items:center;
+ background:linear-gradient(135deg,var(--p),var(--s));
+ color:#fff;
+ font-size:24px;
+}
+
+.logo small{
+ color:var(--muted);
+}
+
+.menu-label{
+ color:var(--muted);
+ font-size:10px;
+ text-transform:uppercase;
+ margin:15px 9px 7px;
+}
+
+.nav{
+ display:flex;
+ flex-direction:column;
+ gap:3px;
+}
+
+.nav button{
+ border:0;
+ background:transparent;
+ color:var(--muted);
+ padding:11px;
+ border-radius:10px;
+ text-align:left;
+}
+
+.nav button:hover,
+.nav button.active{
+ background:rgba(24,119,242,.1);
+ color:var(--p);
+}
+
+.nav-icon{
+ width:27px;
+ display:inline-block;
+}
+
+.main{
+ margin-left:255px;
+ width:calc(100% - 255px);
+}
+
+/* TOPBAR */
+
+.topbar{
+ height:68px;
+ position:sticky;
+ top:0;
+ z-index:80;
+ display:flex;
+ align-items:center;
+ justify-content:space-between;
+ padding:0 22px;
+ background:var(--card);
+ border-bottom:1px solid var(--border);
+}
+
+.search{
+ width:370px;
+ display:flex;
+ align-items:center;
+ gap:8px;
+ background:var(--bg);
+ border:1px solid var(--border);
+ border-radius:10px;
+ padding:10px 13px;
+}
+
+.search input{
+ border:0;
+ outline:0;
+ background:transparent;
+ color:var(--text);
+ width:100%;
+}
+
+.top-actions{
+ display:flex;
+ gap:7px;
+}
+
+.icon-btn{
+ width:40px;
+ height:40px;
+ border-radius:10px;
+ border:1px solid var(--border);
+ background:var(--card);
+ color:var(--text);
+}
+
+.mobile-menu{
+ display:none;
+}
+
+/* CONTENT */
+
+.content{
+ padding:24px;
+}
+
+.page{
+ display:none;
+}
+
+.page.active{
+ display:block;
+}
+
+.hero{
+ min-height:350px;
+ border-radius:25px;
+ overflow:hidden;
+ color:white;
+ display:flex;
+ align-items:center;
+ padding:45px;
+ background:
+ linear-gradient(90deg,rgba(2,7,20,.95),rgba(2,7,20,.35)),
+ url("https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1800&q=80")
+ center/cover;
+}
+
+.hero-content{
+ max-width:720px;
+}
+
+.hero-tag{
+ display:inline-block;
+ padding:7px 13px;
+ border-radius:30px;
+ background:rgba(255,255,255,.14);
+ font-size:12px;
+}
+
+.hero h1{
+ font-size:50px;
+ line-height:1.05;
+ margin:18px 0;
+}
+
+.hero p{
+ color:#dce6f7;
+ line-height:1.7;
+ max-width:650px;
+}
+
+.btn{
+ border:0;
+ padding:10px 15px;
+ border-radius:9px;
+ font-weight:700;
+}
+
+.primary{
+ background:var(--p);
+ color:#fff;
+}
+
+.secondary{
+ background:var(--s);
+ color:#fff;
+}
+
+.gray{
+ background:var(--bg);
+ color:var(--text);
+ border:1px solid var(--border);
+}
+
+.white{
+ background:#fff;
+ color:#111827;
+}
+
+.danger{
+ background:var(--red);
+ color:white;
+}
+
+.success{
+ background:var(--green);
+ color:white;
+}
+
+/* STATS */
+
+.stats{
+ display:grid;
+ grid-template-columns:repeat(6,1fr);
+ gap:13px;
+ margin:20px 0;
+}
+
+.stat{
+ background:var(--card);
+ border:1px solid var(--border);
+ border-radius:16px;
+ padding:17px;
+ box-shadow:var(--shadow);
+}
+
+.stat-icon{
+ font-size:24px;
+}
+
+.stat h2{
+ margin-top:8px;
+}
+
+.stat p{
+ color:var(--muted);
+ font-size:11px;
+ margin-top:3px;
+}
+
+/* SECTION HEADER */
+
+.section-head{
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ margin:27px 0 15px;
+}
+
+.section-head p{
+ color:var(--muted);
+ font-size:12px;
+ margin-top:4px;
+}
+
+/* CARDS */
+
+.card{
+ background:var(--card);
+ border:1px solid var(--border);
+ border-radius:17px;
+ padding:19px;
+ box-shadow:var(--shadow);
+}
+
+.grid-2{
+ display:grid;
+ grid-template-columns:1.4fr 1fr;
+ gap:17px;
+}
+
+/* LIVE */
+
+.live{
+ border-radius:18px;
+ padding:24px;
+ color:white;
+ background:linear-gradient(135deg,var(--p),var(--s));
+}
+
+.live-label{
+ display:inline-block;
+ padding:6px 10px;
+ background:rgba(255,255,255,.15);
+ border-radius:20px;
+ font-size:10px;
+}
+
+.live-main{
+ display:grid;
+ grid-template-columns:1fr 150px 1fr;
+ align-items:center;
+ text-align:center;
+ margin-top:25px;
+}
+
+.big-flag{
+ font-size:60px;
+}
+
+.live-score{
+ font-size:42px;
+ font-weight:900;
+}
+
+/* FILTERS */
+
+.filters{
+ display:flex;
+ flex-wrap:wrap;
+ gap:8px;
+ padding:14px;
+ background:var(--card);
+ border:1px solid var(--border);
+ border-radius:15px;
+ margin-bottom:15px;
+}
+
+.field{
+ padding:10px 12px;
+ border-radius:9px;
+ border:1px solid var(--border);
+ background:var(--bg);
+ color:var(--text);
+ outline:none;
+}
+
+/* MATCH */
+
+.match-list{
+ display:grid;
+ gap:9px;
+}
+
+.match{
+ display:grid;
+ grid-template-columns:125px 1fr 145px 100px;
+ align-items:center;
+ gap:10px;
+ padding:15px;
+ border:1px solid var(--border);
+ background:var(--card);
+ border-radius:15px;
+ transition:.2s;
+}
+
+.match:hover{
+ transform:translateY(-2px);
+ box-shadow:var(--shadow);
+}
+
+.match-date{
+ font-size:11px;
+ color:var(--muted);
+}
+
+.match-teams{
+ display:flex;
+ justify-content:center;
+ align-items:center;
+ gap:25px;
+ text-align:center;
+}
+
+.team{
+ min-width:105px;
+}
+
+.flag{
+ display:block;
+ font-size:29px;
+ margin-bottom:4px;
+}
+
+.score{
+ font-size:19px;
+ font-weight:800;
+}
+
+.stage{
+ display:inline-block;
+ padding:6px 8px;
+ border-radius:7px;
+ background:rgba(24,119,242,.1);
+ color:var(--p);
+ font-size:9px;
+ font-weight:bold;
+}
+
+.favorite{
+ border:0;
+ background:transparent;
+ color:#aaa;
+ font-size:22px;
+}
+
+.favorite.active{
+ color:#f5c400;
+}
+
+/* TABLE */
+
+.table-wrap{
+ overflow:auto;
+}
+
+.table{
+ width:100%;
+ border-collapse:collapse;
+ background:var(--card);
+}
+
+.table th,
+.table td{
+ padding:12px;
+ border-bottom:1px solid var(--border);
+ font-size:12px;
+ text-align:center;
+ white-space:nowrap;
+}
+
+.table th{
+ color:var(--muted);
+ font-size:10px;
+}
+
+.left{
+ text-align:left!important;
+}
+
+/* TABS */
+
+.tabs{
+ display:flex;
+ flex-wrap:wrap;
+ gap:7px;
+ margin-bottom:15px;
+}
+
+/* BRACKET */
+
+.bracket{
+ display:flex;
+ gap:25px;
+ overflow-x:auto;
+ padding-bottom:15px;
+}
+
+.round{
+ min-width:220px;
+}
+
+.round-title{
+ color:var(--muted);
+ font-size:11px;
+ margin-bottom:13px;
+}
+
+.bracket-match{
+ background:var(--card);
+ border:1px solid var(--border);
+ border-radius:12px;
+ overflow:hidden;
+ margin-bottom:25px;
+}
+
+.bteam{
+ padding:10px;
+ border-bottom:1px solid var(--border);
+ display:flex;
+ justify-content:space-between;
+ font-size:12px;
+}
+
+/* TEAM GRID */
+
+.team-grid{
+ display:grid;
+ grid-template-columns:repeat(4,1fr);
+ gap:13px;
+}
+
+.team-card{
+ background:var(--card);
+ border:1px solid var(--border);
+ border-radius:17px;
+ padding:18px;
+ text-align:center;
+}
+
+.team-card:hover{
+ box-shadow:var(--shadow);
+}
+
+.team-logo{
+ font-size:48px;
+ margin:10px;
+}
+
+/* PLAYER */
+
+.player-grid{
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:13px;
+}
+
+.player{
+ display:flex;
+ align-items:center;
+ gap:12px;
+ padding:15px;
+ background:var(--card);
+ border:1px solid var(--border);
+ border-radius:15px;
+}
+
+.player-photo{
+ width:52px;
+ height:52px;
+ border-radius:50%;
+ display:grid;
+ place-items:center;
+ background:var(--bg);
+ font-size:26px;
+}
+
+.player-info{
+ flex:1;
+}
+
+.player-info small{
+ color:var(--muted);
+}
+
+.goals{
+ font-size:20px;
+ font-weight:bold;
+}
+
+/* IMAGE CARDS */
+
+.image-grid{
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:15px;
+}
+
+.image-card{
+ background:var(--card);
+ border:1px solid var(--border);
+ border-radius:17px;
+ overflow:hidden;
+}
+
+.image-card img{
+ width:100%;
+ height:170px;
+ object-fit:cover;
+}
+
+.image-content{
+ padding:16px;
+}
+
+.image-content p{
+ color:var(--muted);
+ font-size:12px;
+ margin-top:7px;
+ line-height:1.5;
+}
+
+/* COMPARISON */
+
+.compare{
+ display:grid;
+ grid-template-columns:1fr 80px 1fr;
+ gap:15px;
+ align-items:center;
+}
+
+.compare-team{
+ text-align:center;
+ background:var(--card);
+ border:1px solid var(--border);
+ border-radius:18px;
+ padding:25px;
+}
+
+.compare-logo{
+ font-size:60px;
+}
+
+.vs{
+ text-align:center;
+ font-size:22px;
+ font-weight:bold;
+}
+
+/* PROGRESS */
+
+.progress{
+ height:9px;
+ background:var(--bg);
+ border-radius:20px;
+ overflow:hidden;
+}
+
+.progress span{
+ display:block;
+ height:100%;
+ background:linear-gradient(90deg,var(--p),var(--s));
+}
+
+/* MODAL */
+
+.modal{
+ position:fixed;
+ inset:0;
+ background:rgba(0,0,0,.65);
+ display:none;
+ align-items:center;
+ justify-content:center;
+ padding:20px;
+ z-index:500;
+}
+
+.modal.show{
+ display:flex;
+}
+
+.modal-box{
+ width:600px;
+ max-width:100%;
+ max-height:90vh;
+ overflow:auto;
+ background:var(--card);
+ border-radius:20px;
+ padding:22px;
+}
+
+.modal-head{
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+}
+
+.close{
+ width:35px;
+ height:35px;
+ border:0;
+ border-radius:9px;
+ background:var(--bg);
+ color:var(--text);
+}
+
+.modal-center{
+ text-align:center;
+ padding:25px;
+}
+
+.modal-flags{
+ font-size:55px;
+}
+
+/* TOAST */
+
+.toast{
+ position:fixed;
+ right:20px;
+ bottom:20px;
+ z-index:1000;
+ background:#172033;
+ color:#fff;
+ padding:13px 17px;
+ border-radius:10px;
+ transform:translateY(80px);
+ opacity:0;
+ transition:.3s;
+}
+
+.toast.show{
+ transform:translateY(0);
+ opacity:1;
+}
+
+/* NOTIFICATION */
+
+.notification{
+ position:fixed;
+ right:20px;
+ top:78px;
+ width:320px;
+ background:var(--card);
+ border:1px solid var(--border);
+ border-radius:15px;
+ padding:16px;
+ box-shadow:var(--shadow);
+ display:none;
+ z-index:300;
+}
+
+.notification.show{
+ display:block;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1150px){
+
+.stats{
+ grid-template-columns:repeat(3,1fr);
+}
+
+.team-grid{
+ grid-template-columns:repeat(3,1fr);
+}
+
+.player-grid{
+ grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+@media(max-width:850px){
+
+.sidebar{
+ transform:translateX(-100%);
+ transition:.3s;
+}
+
+.sidebar.open{
+ transform:translateX(0);
+}
+
+.main{
+ margin-left:0;
+ width:100%;
+}
+
+.mobile-menu{
+ display:block;
+}
+
+.topbar{
+ padding:0 14px;
+}
+
+.search{
+ width:280px;
+}
+
+.grid-2{
+ grid-template-columns:1fr;
+}
+
+.match{
+ grid-template-columns:1fr;
+ text-align:center;
+}
+
+}
+
+@media(max-width:600px){
+
+.content{
+ padding:13px;
+}
+
+.hero{
+ padding:27px 20px;
+ min-height:330px;
+}
+
+.hero h1{
+ font-size:36px;
+}
+
+.stats,
+.team-grid,
+.player-grid,
+.image-grid{
+ grid-template-columns:1fr;
+}
+
+.search{
+ display:none;
+}
+
+.live-main{
+ grid-template-columns:1fr;
+ gap:12px;
+}
+
+.compare{
+ grid-template-columns:1fr;
+}
+
+.vs{
+ display:none;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<div class="layout">
+
+<!-- SIDEBAR -->
+
+<aside class="sidebar" id="sidebar">
+
+<div class="logo">
+
+<div class="logo-ball">⚽</div>
+
+<div>
+<strong>WORLD CUP</strong>
+<br>
+<small>2026 Ultimate</small>
+</div>
+
+</div>
+
+<div class="menu-label">Dashboard</div>
+
+<div class="nav">
+
+<button class="active" onclick="page('dashboard',this)">
+<span class="nav-icon">🏠</span> Dashboard
+</button>
+
+<button onclick="page('matches',this)">
+<span class="nav-icon">⚽</span> Matches
+</button>
+
+<button onclick="page('calendar',this)">
+<span class="nav-icon">📅</span> Calendar
+</button>
+
+<button onclick="page('groups',this)">
+<span class="nav-icon">📊</span> Groups
+</button>
+
+<button onclick="page('bracket',this)">
+<span class="nav-icon">🏆</span> Knockout
+</button>
+
+</div>
+
+<div class="menu-label">Explore</div>
+
+<div class="nav">
+
+<button onclick="page('teams',this)">
+<span class="nav-icon">🌎</span> Teams
+</button>
+
+<button onclick="page('players',this)">
+<span class="nav-icon">👤</span> Players
+</button>
+
+<button onclick="page('stadiums',this)">
+<span class="nav-icon">🏟️</span> Stadiums
+</button>
+
+<button onclick="page('news',this)">
+<span class="nav-icon">📰</span> News
+</button>
+
+</div>
+
+<div class="menu-label">Tools</div>
+
+<div class="nav">
+
+<button onclick="page('compare',this)">
+<span class="nav-icon">⚔️</span> Compare
+</button>
+
+<button onclick="page('statistics',this)">
+<span class="nav-icon">📈</span> Statistics
+</button>
+
+<button onclick="page('favorites',this)">
+<span class="nav-icon">⭐</span> Favorites
+</button>
+
+<button onclick="page('settings',this)">
+<span class="nav-icon">⚙️</span> Settings
+</button>
+
+</div>
+
+</aside>
+
+
+<!-- MAIN -->
+
+<main class="main">
+
+<header class="topbar">
+
+<div style="display:flex;gap:9px;align-items:center">
+
+<button
+class="icon-btn mobile-menu"
+onclick="toggleSidebar()">
+☰
+</button>
+
+<div class="search">
+🔎
+<input
+id="globalSearch"
+placeholder="Search team, player, match..."
+oninput="globalSearch()">
+</div>
+
+</div>
+
+<div class="top-actions">
+
+<button class="icon-btn"
+onclick="toggleNotifications()">
+🔔
+</button>
+
+<button class="icon-btn"
+onclick="toggleDark()">
+🌙
+</button>
+
+</div>
+
+</header>
+
+
+<div class="notification" id="notification">
+
+<strong>Notifications</strong>
+
+<hr style="border:0;border-top:1px solid var(--border);margin:12px 0">
+
+<p style="font-size:12px">
+🔴 Live match available
+</p>
+
+<br>
+
+<p style="font-size:12px">
+⚽ New result added
+</p>
+
+<br>
+
+<p style="font-size:12px">
+🏆 Knockout bracket updated
+</p>
+
+</div>
+
+
+<div class="content">
+
+
+<!-- DASHBOARD -->
+
+<section id="dashboard" class="page active">
+
+<div class="hero">
+
+<div class="hero-content">
+
+<span class="hero-tag">
+🌎 USA • CANADA • MEXICO
+</span>
+
+<h1>FIFA World Cup<br>2026</h1>
+
+<p>
+A complete World Cup dashboard with matches,
+results, groups, teams, players, stadiums,
+statistics and knockout stages.
+</p>
+
+<br>
+
+<button class="btn primary"
+onclick="page('matches')">
+Explore Matches
+</button>
+
+<button class="btn white"
+onclick="page('teams')">
+Explore Teams
+</button>
+
+</div>
+
+</div>
+
+
+<div class="stats">
+
+<div class="stat">
+<div class="stat-icon">⚽</div>
+<h2>104</h2>
+<p>Total Matches</p>
+</div>
+
+<div class="stat">
+<div class="stat-icon">🌎</div>
+<h2>48</h2>
+<p>Teams</p>
+</div>
+
+<div class="stat">
+<div class="stat-icon">🏆</div>
+<h2>12</h2>
+<p>Groups</p>
+</div>
+
+<div class="stat">
+<div class="stat-icon">🏟️</div>
+<h2>16</h2>
+<p>Stadiums</p>
+</div>
+
+<div class="stat">
+<div class="stat-icon">⚽</div>
+<h2>320+</h2>
+<p>Goals</p>
+</div>
+
+<div class="stat">
+<div class="stat-icon">👥</div>
+<h2>3M+</h2>
+<p>Fans</p>
+</div>
+
+</div>
+
+
+<div class="section-head">
+
+<div>
+<h2>🔴 Live Match</h2>
+<p>Example live match center</p>
+</div>
+
+<span class="stage">LIVE</span>
+
+</div>
+
+
+<div class="grid-2">
+
+<div class="live">
+
+<span class="live-label">🔴 LIVE • 72:34</span>
+
+<div class="live-main">
+
+<div>
+<div class="big-flag">🇫🇷</div>
+<h3>France</h3>
+</div>
+
+<div>
+
+<div class="live-score">
+2 - 1
+</div>
+
+<small>Second Half</small>
+
+</div>
+
+<div>
+<div class="big-flag">🇲🇦</div>
+<h3>Morocco</h3>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h3>Latest Results</h3>
+
+<br>
+
+<p>🇪🇸 Spain <b>1 - 0</b> 🇦🇷 Argentina</p>
+
+<hr style="border:0;border-top:1px solid var(--border);margin:13px 0">
+
+<p>🇫🇷 France <b>2 - 0</b> 🇲🇦 Morocco</p>
+
+<hr style="border:0;border-top:1px solid var(--border);margin:13px 0">
+
+<p>🏴 England <b>1 - 2</b> 🇦🇷 Argentina</p>
+
+<hr style="border:0;border-top:1px solid var(--border);margin:13px 0">
+
+<p>🇪🇸 Spain <b>2 - 1</b> 🇧🇪 Belgium</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- MATCHES -->
+
+<section id="matches" class="page">
+
+<div class="section-head">
+
+<div>
+<h2>⚽ All Match Results</h2>
+<p id="matchCounter">104 matches</p>
+</div>
+
+<button class="btn primary"
+onclick="resetMatches()">
+Reset Filters
+</button>
+
+</div>
+
+
+<div class="filters">
+
+<input
+class="field"
+id="matchSearch"
+placeholder="Search team..."
+oninput="renderMatches()">
+
+<select
+class="field"
+id="stageFilter"
+onchange="renderMatches()">
+
+<option value="all">All Stages</option>
+<option value="Group">Group Stage</option>
+<option value="Round of 32">Round of 32</option>
+<option value="Round of 16">Round of 16</option>
+<option value="Quarter Final">Quarter Final</option>
+<option value="Semi Final">Semi Final</option>
+<option value="3rd Place">3rd Place</option>
+<option value="Final">Final</option>
+
+</select>
+
+
+<select
+class="field"
+id="groupFilter"
+onchange="renderMatches()">
+
+<option value="all">All Groups</option>
+
+<option>A</option>
+<option>B</option>
+<option>C</option>
+<option>D</option>
+<option>E</option>
+<option>F</option>
+<option>G</option>
+<option>H</option>
+<option>I</option>
+<option>J</option>
+<option>K</option>
+<option>L</option>
+
+</select>
+
+
+<select
+class="field"
+id="statusFilter"
+onchange="renderMatches()">
+
+<option value="all">All Status</option>
+<option value="finished">Finished</option>
+<option value="upcoming">Upcoming</option>
+
+</select>
+
+</div>
+
+
+<div id="matchesList" class="match-list"></div>
+
+<div style="text-align:center;margin:20px">
+
+<button
+id="loadMore"
+class="btn primary"
+onclick="loadMore()">
+Load More
+</button>
+
+</div>
+
+</section>
+
+
+<!-- CALENDAR -->
+
+<section id="calendar" class="page">
+
+<div class="section-head">
+
+<div>
+<h2>📅 Tournament Calendar</h2>
+<p>Browse matches by date</p>
+</div>
+
+</div>
+
+<div class="card">
+
+<input
+type="date"
+id="dateFilter"
+class="field"
+onchange="filterDate()">
+
+<button
+class="btn gray"
+onclick="clearDate()">
+Clear Date
+</button>
+
+</div>
+
+<br>
+
+<div id="calendarResults" class="match-list"></div>
+
+</section>
+
+
+<!-- GROUPS -->
+
+<section id="groups" class="page">
+
+<div class="section-head">
+
+<div>
+<h2>📊 Group Standings</h2>
+<p>12 groups • 48 teams</p>
+</div>
+
+</div>
+
+<div class="tabs" id="groupTabs"></div>
+
+<div class="card table-wrap">
+
+<table class="table">
+
+<thead>
+
+<tr>
+<th>#</th>
+<th class="left">TEAM</th>
+<th>MP</th>
+<th>W</th>
+<th>D</th>
+<th>L</th>
+<th>GF</th>
+<th>GA</th>
+<th>GD</th>
+<th>PTS</th>
+</tr>
+
+</thead>
+
+<tbody id="groupTable"></tbody>
+
+</table>
+
+</div>
+
+</section>
+
+
+<!-- BRACKET -->
+
+<section id="bracket" class="page">
+
+<div class="section-head">
+
+<div>
+<h2>🏆 Knockout Bracket</h2>
+<p>Road to the final</p>
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="bracket">
+
+<div class="round">
+
+<div class="round-title">ROUND OF 32</div>
+
+<div class="bracket-match">
+
+<div class="bteam">
+🇪🇸 Spain <b>2</b>
+</div>
+
+<div class="bteam">
+🇨🇭 Switzerland <b>1</b>
+</div>
+
+</div>
+
+<div class="bracket-match">
+
+<div class="bteam">
+🇫🇷 France <b>3</b>
+</div>
+
+<div class="bteam">
+🇨🇦 Canada <b>0</b>
+</div>
+
+</div>
+
+<div class="bracket-match">
+
+<div class="bteam">
+🇦🇷 Argentina <b>2</b>
+</div>
+
+<div class="bteam">
+🇩🇪 Germany <b>1</b>
+</div>
+
+</div>
+
+<div class="bracket-match">
+
+<div class="bteam">
+🏴 England <b>2</b>
+</div>
+
+<div class="bteam">
+🇧🇷 Brazil <b>0</b>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="round">
+
+<div class="round-title">ROUND OF 16</div>
+
+<div class="bracket-match">
+
+<div class="bteam">
+🇪🇸 Spain <b>3</b>
+</div>
+
+<div class="bteam">
+🇮🇹 Italy <b>1</b>
+</div>
+
+</div>
+
+<div class="bracket-match">
+
+<div class="bteam">
+🇫🇷 France <b>2</b>
+</div>
+
+<div class="bteam">
+🇳🇱 Netherlands <b>0</b>
+</div>
+
+</div>
+
+<div class="bracket-match">
+
+<div class="bteam">
+🇦🇷 Argentina <b>2</b>
+</div>
+
+<div class="bteam">
+🇵🇹 Portugal <b>1</b>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="round">
+
+<div class="round-title">QUARTER FINALS</div>
+
+<div class="bracket-match">
+
+<div class="bteam">
+🇪🇸 Spain <b>2</b>
+</div>
+
+<div class="bteam">
+🇧🇪 Belgium <b>1</b>
+</div>
+
+</div>
+
+<div class="bracket-match">
+
+<div class="bteam">
+🇫🇷 France <b>2</b>
+</div>
+
+<div class="bteam">
+🇲🇦 Morocco <b>0</b>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="round">
+
+<div class="round-title">SEMI FINALS</div>
+
+<div class="bracket-match">
+
+<div class="bteam">
+🇪🇸 Spain <b>2</b>
+</div>
+
+<div class="bteam">
+🇫🇷 France <b>0</b>
+</div>
+
+</div>
+
+<div class="bracket-match">
+
+<div class="bteam">
+🏴 England <b>1</b>
+</div>
+
+<div class="bteam">
+🇦🇷 Argentina <b>2</b>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="round">
+
+<div class="round-title">FINAL</div>
+
+<div class="bracket-match">
+
+<div class="bteam">
+🇪🇸 Spain <b>1</b>
+</div>
+
+<div class="bteam">
+🇦🇷 Argentina <b>0</b>
+</div>
+
+</div>
+
+<div style="text-align:center;font-size:65px">
+🏆
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- TEAMS -->
+
+<section id="teams" class="page">
+
+<div class="section-head">
+
+<div>
+<h2>🌎 Teams</h2>
+<p>48 national teams</p>
+</div>
+
+<input
+class="field"
+id="teamSearch"
+placeholder="Search team..."
+oninput="renderTeams()">
+
+</div>
+
+<div class="team-grid" id="teamGrid"></div>
+
+</section>
+
+
+<!-- PLAYERS -->
+
+<section id="players" class="page">
+
+<div class="section-head">
+
+<div>
+<h2>👤 Players</h2>
+<p>Top scorers and player data</p>
+</div>
+
+<input
+class="field"
+id="playerSearch"
+placeholder="Search player..."
+oninput="renderPlayers()">
+
+</div>
+
+<div class="player-grid" id="playerGrid"></div>
+
+</section>
+
+
+<!-- STADIUMS -->
+
+<section id="stadiums" class="page">
+
+<div class="section-head">
+
+<div>
+<h2>🏟️ Stadiums</h2>
+<p>Host venues</p>
+</div>
+
+</div>
+
+<div class="image-grid">
+
+<div class="image-card">
+
+<img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1000&q=80">
+
+<div class="image-content">
+
+<h3>MetLife Stadium</h3>
+
+<p>📍 New York / New Jersey</p>
+
+<p>Capacity: 82,500+</p>
+
+</div>
+
+</div>
+
+
+<div class="image-card">
+
+<img src="https://images.unsplash.com/photo-1577223625816-7546f13df25d?auto=format&fit=crop&w=1000&q=80">
+
+<div class="image-content">
+
+<h3>SoFi Stadium</h3>
+
+<p>📍 Los Angeles</p>
+
+<p>Modern football venue</p>
+
+</div>
+
+</div>
+
+
+<div class="image-card">
+
+<img src="https://images.unsplash.com/photo-1459865264687-595d652de67e?auto=format&fit=crop&w=1000&q=80">
+
+<div class="image-content">
+
+<h3>Estadio Azteca</h3>
+
+<p>📍 Mexico City</p>
+
+<p>Historic stadium</p>
+
+</div>
+
+</div>
+
+
+<div class="image-card">
+
+<img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1000&q=80">
+
+<div class="image-content">
+
+<h3>Mercedes-Benz Stadium</h3>
+
+<p>📍 Atlanta</p>
+
+</div>
+
+</div>
+
+
+<div class="image-card">
+
+<img src="https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=1000&q=80">
+
+<div class="image-content">
+
+<h3>NRG Stadium</h3>
+
+<p>📍 Houston</p>
+
+</div>
+
+</div>
+
+
+<div class="image-card">
+
+<img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1000&q=80">
+
+<div class="image-content">
+
+<h3>BC Place</h3>
+
+<p>📍 Vancouver</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- NEWS -->
+
+<section id="news" class="page">
+
+<div class="section-head">
+
+<div>
+<h2>📰 News</h2>
+<p>World Cup articles</p>
+</div>
+
+</div>
+
+<div class="image-grid">
+
+<div class="image-card">
+
+<img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=1000&q=80">
+
+<div class="image-content">
+
+<h3>48 Teams</h3>
+
+<p>
+The expanded tournament format brings
+48 national teams together.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="image-card">
+
+<img src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=1000&q=80">
+
+<div class="image-content">
+
+<h3>Football Fans</h3>
+
+<p>
+Fans from around the world follow
+the tournament.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="image-card">
+
+<img src="https://images.unsplash.com/photo-1553778263-73a83bab9b0c?auto=format&fit=crop&w=1000&q=80">
+
+<div class="image-content">
+
+<h3>Host Cities</h3>
+
+<p>
+Matches are hosted across North America.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- COMPARE -->
+
+<section id="compare" class="page">
+
+<div class="section-head">
+
+<div>
+<h2>⚔️ Team Comparison</h2>
+<p>Compare two teams</p>
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="compare">
+
+<div class="compare-team">
+
+<div class="compare-logo">🇪🇸</div>
+
+<h2>Spain</h2>
+
+<br>
+
+<p>Matches: <b>7</b></p>
+
+<p>Wins: <b>6</b></p>
+
+<p>Goals: <b>15</b></p>
+
+<br>
+
+<div class="progress">
+<span style="width:90%"></span>
+</div>
+
+</div>
+
+
+<div class="vs">VS</div>
+
+
+<div class="compare-team">
+
+<div class="compare-logo">🇦🇷</div>
+
+<h2>Argentina</h2>
+
+<br>
+
+<p>Matches: <b>7</b></p>
+
+<p>Wins: <b>5</b></p>
+
+<p>Goals: <b>13</b></p>
+
+<br>
+
+<div class="progress">
+<span style="width:80%"></span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- STATISTICS -->
+
+<section id="statistics" class="page">
+
+<div class="section-head">
+
+<div>
+<h2>📈 Tournament Statistics</h2>
+<p>Example tournament analytics</p>
+</div>
+
+</div>
+
+<div class="stats">
+
+<div class="stat">
+<div class="stat-icon">⚽</div>
+<h2>320+</h2>
+<p>Goals</p>
+</div>
+
+<div class="stat">
+<div class="stat-icon">🎯</div>
+<h2>1,250</h2>
+<p>Shots</p>
+</div>
+
+<div class="stat">
+<div class="stat-icon">🟨</div>
+<h2>410</h2>
+<p>Yellow Cards</p>
+</div>
+
+<div class="stat">
+<div class="stat-icon">🟥</div>
+<h2>18</h2>
+<p>Red Cards</p>
+</div>
+
+<div class="stat">
+<div class="stat-icon">🥅</div>
+<h2>95</h2>
+<p>Clean Sheets</p>
+</div>
+
+<div class="stat">
+<div class="stat-icon">🧤</div>
+<h2>700+</h2>
+<p>Saves</p>
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h3>Goals Distribution</h3>
+
+<br>
+
+<p>Group Stage</p>
+
+<div class="progress">
+<span style="width:65%"></span>
+</div>
+
+<br>
+
+<p>Round of 32</p>
+
+<div class="progress">
+<span style="width:35%"></span>
+</div>
+
+<br>
+
+<p>Round of 16</p>
+
+<div class="progress">
+<span style="width:48%"></span>
+</div>
+
+<br>
+
+<p>Quarter Finals</p>
+
+<div class="progress">
+<span style="width:25%"></span>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FAVORITES -->
+
+<section id="favorites" class="page">
+
+<div class="section-head">
+
+<div>
+<h2>⭐ Favorites</h2>
+<p>Your saved matches</p>
+</div>
+
+<button
+class="btn danger"
+onclick="clearFavorites()">
+Clear All
+</button>
+
+</div>
+
+<div id="favoritesList" class="match-list"></div>
+
+</section>
+
+
+<!-- SETTINGS -->
+
+<section id="settings" class="page">
+
+<div class="section-head">
+
+<div>
+<h2>⚙️ Settings</h2>
+<p>Customize dashboard</p>
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>🎨 Color Themes</h3>
+
+<br>
+
+<div style="display:flex;gap:8px;flex-wrap:wrap">
+
+<button class="btn primary"
+onclick="setTheme('default')">
+Blue
+</button>
+
+<button class="btn secondary"
+onclick="setTheme('purple')">
+Purple
+</button>
+
+<button class="btn"
+style="background:#e11d48;color:white"
+onclick="setTheme('red')">
+Red
+</button>
+
+<button class="btn"
+style="background:#059669;color:white"
+onclick="setTheme('green')">
+Green
+</button>
+
+<button class="btn"
+style="background:#b7791f;color:white"
+onclick="setTheme('gold')">
+Gold
+</button>
+
+<button class="btn"
+style="background:#0891b2;color:white"
+onclick="setTheme('cyan')">
+Cyan
+</button>
+
+<button class="btn"
+style="background:#ea580c;color:white"
+onclick="setTheme('orange')">
+Orange
+</button>
+
+<button class="btn"
+style="background:#db2777;color:white"
+onclick="setTheme('pink')">
+Pink
+</button>
+
+</div>
+
+<br><br>
+
+<h3>💾 Data</h3>
+
+<br>
+
+<button
+class="btn primary"
+onclick="exportFavorites()">
+📤 Export Favorites JSON
+</button>
+
+<button
+class="btn gray"
+onclick="clearFavorites()">
+Clear Favorites
+</button>
+
+</div>
+
+</section>
+
+
+</div>
+
+</main>
+
+</div>
+
+
+<!-- MODAL -->
+
+<div class="modal" id="modal">
+
+<div class="modal-box">
+
+<div class="modal-head">
+
+<h3 id="modalTitle">Details</h3>
+
+<button
+class="close"
+onclick="closeModal()">
+✕
+</button>
+
+</div>
+
+<div id="modalBody"></div>
+
+</div>
+
+</div>
+
+
+<div class="toast" id="toast">
+Done
+</div>
+
+
+<script>
+
+/* ==========================================================
+ DATA
+========================================================== */
+
+const teams=[
+
+["Mexico","🇲🇽","A"],
+["South Africa","🇿🇦","A"],
+["Korea Republic","🇰🇷","A"],
+["Morocco","🇲🇦","A"],
+
+["Canada","🇨🇦","B"],
+["Japan","🇯🇵","B"],
+["Chile","🇨🇱","B"],
+["Cameroon","🇨🇲","B"],
+
+["Brazil","🇧🇷","C"],
+["Italy","🇮🇹","C"],
+["USA","🇺🇸","C"],
+["Ghana","🇬🇭","C"],
+
+["Argentina","🇦🇷","D"],
+["Germany","🇩🇪","D"],
+["Nigeria","🇳🇬","D"],
+["Australia","🇦🇺","D"],
+
+["France","🇫🇷","E"],
+["Netherlands","🇳🇱","E"],
+["Ecuador","🇪🇨","E"],
+["Saudi Arabia","🇸🇦","E"],
+
+["England","🏴","F"],
+["Portugal","🇵🇹","F"],
+["Iran","🇮🇷","F"],
+["Panama","🇵🇦","F"],
+
+["Spain","🇪🇸","G"],
+["Belgium","🇧🇪","G"],
+["Egypt","🇪🇬","G"],
+["Senegal","🇸🇳","G"],
+
+["Croatia","🇭🇷","H"],
+["Colombia","🇨🇴","H"],
+["Uruguay","🇺🇾","H"],
+["Canada B","🇨🇦","H"],
+
+["Denmark","🇩🇰","I"],
+["Switzerland","🇨🇭","I"],
+["Serbia","🇷🇸","I"],
+["Costa Rica","🇨🇷","I"],
+
+["Poland","🇵🇱","J"],
+["Austria","🇦🇹","J"],
+["Tunisia","🇹🇳","J"],
+["Greece","🇬🇷","J"],
+
+["Turkey","🇹🇷","K"],
+["Sweden","🇸🇪","K"],
+["Czech Republic","🇨🇿","K"],
+["Nigeria B","🇳🇬","K"],
+
+["Ukraine","🇺🇦","L"],
+["Norway","🇳🇴","L"],
+["Wales","🏴","L"],
+["Costa Rica B","🇨🇷","L"]
+
+];
+
+
+const scoreList=[
+"2 - 0",
+"1 - 1",
+"3 - 1",
+"2 - 1",
+"1 - 0",
+"0 - 0",
+"3 - 0",
+"2 - 2",
+"4 - 1",
+"1 - 2",
+"2 - 3",
+"3 - 2",
+"4 - 0",
+"0 - 1"
+];
+
+
+const matches=[];
+
+let matchId=1;
+
+
+/* 72 GROUP MATCHES */
+
+for(let g=0;g<12;g++){
+
+ const letter=String.fromCharCode(65+g);
+
+ const groupTeams=teams.filter(t=>t[2]===letter);
+
+ const pairs=[
+  [0,1],
+  [2,3],
+  [0,2],
+  [1,3],
+  [0,3],
+  [1,2]
+ ];
+
+ pairs.forEach((pair,i)=>{
+
+  const a=groupTeams[pair[0]];
+  const b=groupTeams[pair[1]];
+
+  matches.push({
+
+   id:matchId++,
+
+   date:"June "+(11+(g*2)+(i%2)),
+
+   time:["15:00","18:00","21:00"][i%3],
+
+   home:a[0],
+
+   away:b[0],
+
+   hf:a[1],
+
+   af:b[1],
+
+   score:scoreList[
+    (matchId+g+i)%scoreList.length
+   ],
+
+   stage:"Group",
+
+   group:letter,
+
+   status:"finished"
+
+  });
+
+ });
+
+}
+
+
+/* KNOCKOUT DATA */
+
+const knockout=[
+
+["July 1","Mexico","Brazil","🇲🇽","🇧🇷","2 - 1","Round of 32"],
+["July 1","Spain","Japan","🇪🇸","🇯🇵","3 - 0","Round of 32"],
+["July 1","Argentina","Australia","🇦🇷","🇦🇺","3 - 1","Round of 32"],
+["July 1","France","Canada","🇫🇷","🇨🇦","2 - 0","Round of 32"],
+
+["July 2","England","Germany","🏴","🇩🇪","2 - 1","Round of 32"],
+["July 2","Portugal","Croatia","🇵🇹","🇭🇷","2 - 0","Round of 32"],
+["July 2","Netherlands","Italy","🇳🇱","🇮🇹","1 - 0","Round of 32"],
+["July 2","Belgium","Colombia","🇧🇪","🇨🇴","2 - 1","Round of 32"],
+
+["July 3","Brazil","Spain","🇧🇷","🇪🇸","1 - 2","Round of 16"],
+["July 3","France","Argentina","🇫🇷","🇦🇷","1 - 2","Round of 16"],
+["July 3","England","Portugal","🏴","🇵🇹","2 - 0","Round of 16"],
+["July 3","Netherlands","Belgium","🇳🇱","🇧🇪","2 - 1","Round of 16"],
+
+["July 4","Mexico","Germany","🇲🇽","🇩🇪","0 - 2","Round of 16"],
+["July 4","Japan","Italy","🇯🇵","🇮🇹","1 - 2","Round of 16"],
+["July 4","Morocco","Brazil","🇲🇦","🇧🇷","1 - 3","Round of 16"],
+["July 4","Switzerland","Croatia","🇨🇭","🇭🇷","0 - 1","Round of 16"],
+
+["July 5","Spain","Belgium","🇪🇸","🇧🇪","2 - 1","Quarter Final"],
+["July 5","France","Morocco","🇫🇷","🇲🇦","2 - 0","Quarter Final"],
+["July 6","England","Norway","🏴","🇳🇴","2 - 1","Quarter Final"],
+["July 6","Argentina","Switzerland","🇦🇷","🇨🇭","3 - 1","Quarter Final"],
+
+["July 8","Spain","France","🇪🇸","🇫🇷","2 - 0","Semi Final"],
+["July 8","England","Argentina","🏴","🇦🇷","1 - 2","Semi Final"],
+
+["July 10","France","England","🇫🇷","🏴","4 - 6","3rd Place"],
+
+["July 11","Spain","Argentina","🇪🇸","🇦🇷","1 - 0","Final"]
+
+];
+
+
+knockout.forEach(x=>{
+
+ matches.push({
+
+  id:matchId++,
+
+  date:x[0],
+
+  time:"20:00",
+
+  home:x[1],
+
+  away:x[2],
+
+  hf:x[3],
+
+  af:x[4],
+
+  score:x[5],
+
+  stage:x[6],
+
+  group:"",
+
+  status:"finished"
+
+ });
+
+});
+
+
+/* PLAYERS */
+
+const players=[
+
+["Kylian Mbappé","France","🇫🇷",7,3],
+["Julián Álvarez","Argentina","🇦🇷",6,2],
+["Lamine Yamal","Spain","🇪🇸",6,5],
+["Harry Kane","England","🏴",5,2],
+["Vinícius Jr.","Brazil","🇧🇷",5,4],
+["Jamal Musiala","Germany","🇩🇪",4,3],
+["Rafael Leão","Portugal","🇵🇹",4,4],
+["Hakim Ziyech","Morocco","🇲🇦",3,3],
+["Victor Osimhen","Nigeria","🇳🇬",4,2],
+["Lautaro Martínez","Argentina","🇦🇷",4,2],
+["Rodri","Spain","🇪🇸",3,5],
+["Bruno Fernandes","Portugal","🇵🇹",3,4],
+["Bukayo Saka","England","🏴",3,3],
+["Pedri","Spain","🇪🇸",2,6],
+["Federico Valverde","Uruguay","🇺🇾",2,4],
+["Achraf Hakimi","Morocco","🇲🇦",2,4],
+["Antoine Griezmann","France","🇫🇷",3,3],
+["Jude Bellingham","England","🏴",3,2]
+
+];
+
+
+/* ==========================================================
+ NAVIGATION
+========================================================== */
+
+function page(id,button){
+
+ document.querySelectorAll(".page")
+ .forEach(x=>x.classList.remove("active"));
+
+ const target=document.getElementById(id);
+
+ if(target)
+ target.classList.add("active");
+
+ document.querySelectorAll(".nav button")
+ .forEach(x=>x.classList.remove("active"));
+
+ if(button)
+ button.classList.add("active");
+
+ document.getElementById("sidebar")
+ .classList.remove("open");
+
+ window.scrollTo({
+  top:0,
+  behavior:"smooth"
+ });
+
+ if(id==="matches")
+ renderMatches();
+
+ if(id==="calendar")
+ renderCalendar();
+
+ if(id==="groups")
+ renderGroups();
+
+ if(id==="teams")
+ renderTeams();
+
+ if(id==="players")
+ renderPlayers();
+
+ if(id==="favorites")
+ renderFavorites();
+
+}
+
+
+/* ==========================================================
+ MATCHES
+========================================================== */
+
+let visible=25;
+
+function renderMatches(){
+
+ const search=
+ document.getElementById("matchSearch")?.value
+ .toLowerCase()||"";
+
+ const stage=
+ document.getElementById("stageFilter")?.value||"all";
+
+ const group=
+ document.getElementById("groupFilter")?.value||"all";
+
+ const status=
+ document.getElementById("statusFilter")?.value||"all";
+
+ const data=matches.filter(m=>{
+
+  const text=(m.home+" "+m.away).toLowerCase();
+
+  return(
+   (!search||text.includes(search))
+   &&
+   (stage==="all"||m.stage===stage)
+   &&
+   (group==="all"||m.group===group)
+   &&
+   (status==="all"||m.status===status)
+  );
+
+ });
+
+ const shown=data.slice(0,visible);
+
+ document.getElementById("matchCounter")
+ .textContent=
+ `Showing ${shown.length} of ${data.length} matches`;
+
+ const favorites=
+ JSON.parse(
+ localStorage.getItem("favorites")||"[]"
+ );
+
+ document.getElementById("matchesList")
+ .innerHTML=
+ shown.map(m=>`
+
+ <div class="match">
+
+ <div class="match-date">
+
+ <b>${m.date}</b>
+
+ <br>
+
+ ${m.time}
+
+ </div>
+
+
+ <div class="match-teams">
+
+ <div class="team">
+
+ <span class="flag">${m.hf}</span>
+
+ ${m.home}
+
+ </div>
+
+ <div class="score">
+ ${m.score}
+ </div>
+
+ <div class="team">
+
+ <span class="flag">${m.af}</span>
+
+ ${m.away}
+
+ </div>
+
+ </div>
+
+
+ <div style="text-align:center">
+
+ <span class="stage">
+ ${m.stage}
+ </span>
+
+ ${m.group?
+ `<br><small style="color:var(--muted)">
+ Group ${m.group}
+ </small>`:""}
+
+ </div>
+
+
+ <div style="text-align:center">
+
+ <button
+ class="favorite ${favorites.includes(m.id)?"active":""}"
+ onclick="favorite(${m.id})">
+
+ ${favorites.includes(m.id)?"★":"☆"}
+
+ </button>
+
+ <button
+ class="btn gray"
+ onclick="matchDetails(${m.id})">
+
+ View
+
+ </button>
+
+ </div>
+
+ </div>
+
+ `).join("");
+
+ document.getElementById("loadMore")
+ .style.display=
+ visible<data.length?
+ "inline-block":
+ "none";
+
+}
+
+
+/* LOAD MORE */
+
+function loadMore(){
+
+ visible+=25;
+
+ renderMatches();
+
+}
+
+
+/* RESET */
+
+function resetMatches(){
+
+ document.getElementById("matchSearch").value="";
+ document.getElementById("stageFilter").value="all";
+ document.getElementById("groupFilter").value="all";
+ document.getElementById("statusFilter").value="all";
+
+ visible=25;
+
+ renderMatches();
+
+}
+
+
+/* FAVORITE */
+
+function favorite(id){
+
+ let f=
+ JSON.parse(
+ localStorage.getItem("favorites")||"[]"
+ );
+
+ if(f.includes(id))
+ f=f.filter(x=>x!==id);
+ else
+ f.push(id);
+
+ localStorage.setItem(
+ "favorites",
+ JSON.stringify(f)
+ );
+
+ renderMatches();
+
+ showToast("Favorites updated");
+
+}
+
+
+/* ==========================================================
+ FAVORITES
+========================================================== */
+
+function renderFavorites(){
+
+ const ids=
+ JSON.parse(
+ localStorage.getItem("favorites")||"[]"
+ );
+
+ const data=
+ matches.filter(m=>ids.includes(m.id));
+
+ const box=
+ document.getElementById("favoritesList");
+
+ if(!data.length){
+
+  box.innerHTML=`
+
+  <div class="card" style="text-align:center">
+
+  <h2>⭐</h2>
+
+  <br>
+
+  <p style="color:var(--muted)">
+  No favorite matches yet.
+  </p>
+
+  </div>
+
+  `;
+
+  return;
+
+ }
+
+ box.innerHTML=
+ data.map(m=>`
+
+ <div class="match">
+
+ <div class="match-date">
+ ${m.date}<br>${m.time}
+ </div>
+
+ <div class="match-teams">
+
+ <div class="team">
+ <span class="flag">${m.hf}</span>
+ ${m.home}
+ </div>
+
+ <div class="score">${m.score}</div>
+
+ <div class="team">
+ <span class="flag">${m.af}</span>
+ ${m.away}
+ </div>
+
+ </div>
+
+ <div>
+ <span class="stage">${m.stage}</span>
+ </div>
+
+ <div>
+ <button
+ class="btn gray"
+ onclick="matchDetails(${m.id})">
+ View
+ </button>
+ </div>
+
+ </div>
+
+ `).join("");
+
+}
+
+
+/* ==========================================================
+ CALENDAR
+========================================================== */
+
+function renderCalendar(){
+
+ const data=
+ matches.slice(0,25);
+
+ document.getElementById("calendarResults")
+ .innerHTML=
+ data.map(calendarCard).join("");
+
+}
+
+
+function calendarCard(m){
+
+ return`
+
+ <div class="match">
+
+ <div class="match-date">
+ <b>${m.date}</b>
+ <br>${m.time}
+ </div>
+
+ <div class="match-teams">
+
+ <div class="team">
+ <span class="flag">${m.hf}</span>
+ ${m.home}
+ </div>
+
+ <div class="score">${m.score}</div>
+
+ <div class="team">
+ <span class="flag">${m.af}</span>
+ ${m.away}
+ </div>
+
+ </div>
+
+ <div>
+ <span class="stage">${m.stage}</span>
+ </div>
+
+ <div>
+ <button
+ class="btn gray"
+ onclick="matchDetails(${m.id})">
+ View
+ </button>
+ </div>
+
+ </div>
+
+ `;
+
+}
+
+
+function filterDate(){
+
+ const value=
+ document.getElementById("dateFilter").value;
+
+ if(!value)return;
+
+ const d=new Date(value);
+
+ const month=d.toLocaleString(
+ "en-US",
+ {month:"long"}
+ );
+
+ const day=d.getDate();
+
+ const key=month+" "+day;
+
+ const data=
+ matches.filter(m=>m.date===key);
+
+ document.getElementById("calendarResults")
+ .innerHTML=
+ data.length?
+ data.map(calendarCard).join(""):
+ `<div class="card">
+ No matches found for ${key}.
+ </div>`;
+
+}
+
+
+function clearDate(){
+
+ document.getElementById("dateFilter").value="";
+
+ renderCalendar();
+
+}
+
+
+/* ==========================================================
+ GROUPS
+========================================================== */
+
+function renderGroups(){
+
+ const tabs=
+ document.getElementById("groupTabs");
+
+ tabs.innerHTML="";
+
+ for(let i=0;i<12;i++){
+
+  const g=
+  String.fromCharCode(65+i);
+
+  const b=
+  document.createElement("button");
+
+  b.className=
+  "btn "+(i===0?"primary":"gray");
+
+  b.textContent=
+  "Group "+g;
+
+  b.onclick=()=>{
+
+   document
+   .querySelectorAll("#groupTabs button")
+   .forEach(x=>x.className="btn gray");
+
+   b.className="btn primary";
+
+   renderGroup(g);
+
+  };
+
+  tabs.appendChild(b);
+
+ }
+
+ renderGroup("A");
+
+}
+
+
+function renderGroup(g){
+
+ const groupTeams=
+ teams.filter(t=>t[2]===g);
+
+ document.getElementById("groupTable")
+ .innerHTML=
+ groupTeams.map((t,i)=>{
+
+  const mp=3;
+
+  const wins=
+  i===0?2:
+  i===1?1:
+  i===2?1:0;
+
+  const draws=
+  i===2?1:0;
+
+  const losses=
+  mp-wins-draws;
+
+  const gf=
+  6-i;
+
+  const ga=
+  2+i;
+
+  const gd=
+  gf-ga;
+
+  const pts=
+  wins*3+draws;
+
+  return`
+
+  <tr>
+
+  <td>${i+1}</td>
+
+  <td class="left">
+  ${t[1]} ${t[0]}
+  </td>
+
+  <td>${mp}</td>
+  <td>${wins}</td>
+  <td>${draws}</td>
+  <td>${losses}</td>
+  <td>${gf}</td>
+  <td>${ga}</td>
+  <td>${gd}</td>
+
+  <td>
+  <strong>${pts}</strong>
+  </td>
+
+  </tr>
+
+  `;
+
+ }).join("");
+
+}
+
+
+/* ==========================================================
+ TEAMS
+========================================================== */
+
+function renderTeams(){
+
+ const q=
+ document.getElementById("teamSearch")
+ ?.value.toLowerCase()||"";
+
+ const data=
+ teams.filter(t=>
+ t[0].toLowerCase().includes(q)
+ );
+
+ document.getElementById("teamGrid")
+ .innerHTML=
+ data.map(t=>`
+
+ <div class="team-card">
+
+ <div class="team-logo">
+ ${t[1]}
+ </div>
+
+ <h3>${t[0]}</h3>
+
+ <p style="color:var(--muted);font-size:12px">
+ Group ${t[2]}
+ </p>
+
+ <br>
+
+ <button
+ class="btn primary"
+ onclick="teamDetails('${t[0]}','${t[1]}','${t[2]}')">
+
+ Team Details
+
+ </button>
+
+ </div>
+
+ `).join("");
+
+}
+
+
+/* ==========================================================
+ TEAM DETAILS
+========================================================== */
+
+function teamDetails(name,flag,group){
+
+ const total=
+ matches.filter(
+ m=>m.home===name||m.away===name
+ ).length;
+
+ openModal(
+
+ name,
+
+ `
+
+ <div class="modal-center">
+
+ <div class="modal-flags">
+ ${flag}
+ </div>
+
+ <h2>${name}</h2>
+
+ <p style="color:var(--muted)">
+ Group ${group}
+ </p>
+
+ <br>
+
+ <div class="stats">
+
+ <div class="stat">
+ <h2>${total}</h2>
+ <p>Matches</p>
+ </div>
+
+ <div class="stat">
+ <h2>${group}</h2>
+ <p>Group</p>
+ </div>
+
+ <div class="stat">
+ <h2>2026</h2>
+ <p>Edition</p>
+ </div>
+
+ </div>
+
+ </div>
+
+ `
+
+ );
+
+}
+
+
+/* ==========================================================
+ PLAYERS
+========================================================== */
+
+function renderPlayers(){
+
+ const q=
+ document.getElementById("playerSearch")
+ ?.value.toLowerCase()||"";
+
+ const data=
+ players.filter(p=>
+ p[0].toLowerCase().includes(q)||
+ p[1].toLowerCase().includes(q)
+ );
+
+ document.getElementById("playerGrid")
+ .innerHTML=
+ data.map(p=>`
+
+ <div class="player">
+
+ <div class="player-photo">
+ ${p[2]}
+ </div>
+
+ <div class="player-info">
+
+ <strong>${p[0]}</strong>
+
+ <br>
+
+ <small>${p[1]}</small>
+
+ <br>
+
+ <small>
+ ${p[4]} assists
+ </small>
+
+ </div>
+
+ <div class="goals">
+ ${p[3]} ⚽
+ </div>
+
+ </div>
+
+ `).join("");
+
+}
+
+
+/* ==========================================================
+ GLOBAL SEARCH
+========================================================== */
+
+function globalSearch(){
+
+ const q=
+ document.getElementById("globalSearch")
+ .value.toLowerCase().trim();
+
+ if(!q)return;
+
+ const team=
+ teams.find(t=>
+ t[0].toLowerCase().includes(q)
+ );
+
+ if(team){
+
+  page("teams");
+
+  document.getElementById("teamSearch").value=q;
+
+  renderTeams();
+
+  return;
+
+ }
+
+ const player=
+ players.find(p=>
+ p[0].toLowerCase().includes(q)
+ );
+
+ if(player){
+
+  page("players");
+
+  document.getElementById("playerSearch").value=q;
+
+  renderPlayers();
+
+  return;
+
+ }
+
+ const match=
+ matches.find(m=>
+ m.home.toLowerCase().includes(q)||
+ m.away.toLowerCase().includes(q)
+ );
+
+ if(match){
+
+  page("matches");
+
+  document.getElementById("matchSearch").value=q;
+
+  renderMatches();
+
+ }
+
+}
+
+
+/* ==========================================================
+ MATCH MODAL
+========================================================== */
+
+function matchDetails(id){
+
+ const m=
+ matches.find(x=>x.id===id);
+
+ openModal(
+
+ "Match Details",
+
+ `
+
+ <div class="modal-center">
+
+ <div class="modal-flags">
+ ${m.hf} ⚽ ${m.af}
+ </div>
+
+ <h1 style="margin:15px">
+ ${m.score}
+ </h1>
+
+ <h2>
+ ${m.home} vs ${m.away}
+ </h2>
+
+ <br>
+
+ <p style="color:var(--muted)">
+ 📅 ${m.date}
+ </p>
+
+ <p style="color:var(--muted)">
+ ⏰ ${m.time}
+ </p>
+
+ <p style="color:var(--muted)">
+ 🏆 ${m.stage}
+ </p>
+
+ ${m.group?
+ `<p style="color:var(--muted)">
+ Group ${m.group}
+ </p>`:""}
+
+ <br>
+
+ <button
+ class="btn primary"
+ onclick="copyMatch(${m.id})">
+ 📋 Copy
+ </button>
+
+ <button
+ class="btn secondary"
+ onclick="shareMatch(${m.id})">
+ 🔗 Share
+ </button>
+
+ </div>
+
+ `
+
+ );
+
+}
+
+
+/* COPY */
+
+function copyMatch(id){
+
+ const m=
+ matches.find(x=>x.id===id);
+
+ const text=
+ `${m.home} ${m.score} ${m.away} - ${m.stage}`;
+
+ if(navigator.clipboard)
+ navigator.clipboard.writeText(text);
+
+ showToast("Match copied");
+
+}
+
+
+/* SHARE */
+
+function shareMatch(id){
+
+ const m=
+ matches.find(x=>x.id===id);
+
+ const text=
+ `${m.home} ${m.score} ${m.away}`;
+
+ if(navigator.share){
+
+  navigator.share({
+   title:"World Cup 2026",
+   text:text
+  });
+
+ }else{
+
+  copyMatch(id);
+
+  showToast("Share text copied");
+
+ }
+
+}
+
+
+/* ==========================================================
+ MODAL
+========================================================== */
+
+function openModal(title,body){
+
+ document.getElementById("modalTitle")
+ .textContent=title;
+
+ document.getElementById("modalBody")
+ .innerHTML=body;
+
+ document.getElementById("modal")
+ .classList.add("show");
+
+}
+
+
+function closeModal(){
+
+ document.getElementById("modal")
+ .classList.remove("show");
+
+}
+
+
+/* ==========================================================
+ DARK
+========================================================== */
+
+function toggleDark(){
+
+ document.body.classList.toggle("dark");
+
+ localStorage.setItem(
+ "dark",
+ document.body.classList.contains("dark")
+ );
+
+}
+
+
+/* ==========================================================
+ THEMES
+========================================================== */
+
+function setTheme(theme){
+
+ document.body.classList.remove(
+ "theme-purple",
+ "theme-red",
+ "theme-green",
+ "theme-gold",
+ "theme-cyan",
+ "theme-orange",
+ "theme-pink",
+ "theme-black"
+ );
+
+ if(theme!=="default")
+ document.body.classList.add("theme-"+theme);
+
+ localStorage.setItem("theme",theme);
+
+ showToast("Theme changed");
+
+}
+
+
+/* ==========================================================
+ NOTIFICATIONS
+========================================================== */
+
+function toggleNotifications(){
+
+ document.getElementById("notification")
+ .classList.toggle("show");
+
+}
+
+
+/* ==========================================================
+ SIDEBAR
+========================================================== */
+
+function toggleSidebar(){
+
+ document.getElementById("sidebar")
+ .classList.toggle("open");
+
+}
+
+
+/* ==========================================================
+ EXPORT
+========================================================== */
+
+function exportFavorites(){
+
+ const ids=
+ JSON.parse(
+ localStorage.getItem("favorites")||"[]"
+ );
+
+ const data=
+ matches.filter(m=>ids.includes(m.id));
+
+ const blob=
+ new Blob(
+ [JSON.stringify(data,null,2)],
+ {type:"application/json"}
+ );
+
+ const url=
+ URL.createObjectURL(blob);
+
+ const a=
+ document.createElement("a");
+
+ a.href=url;
+
+ a.download=
+ "world-cup-favorites.json";
+
+ a.click();
+
+ URL.revokeObjectURL(url);
+
+ showToast("Favorites exported");
+
+}
+
+
+/* ==========================================================
+ CLEAR
+========================================================== */
+
+function clearFavorites(){
+
+ localStorage.removeItem("favorites");
+
+ renderFavorites();
+ renderMatches();
+
+ showToast("Favorites cleared");
+
+}
+
+
+/* ==========================================================
+ TOAST
+========================================================== */
+
+function showToast(text){
+
+ const t=
+ document.getElementById("toast");
+
+ t.textContent=text;
+
+ t.classList.add("show");
+
+ setTimeout(()=>{
+  t.classList.remove("show");
+ },1800);
+
+}
+
+
+/* ==========================================================
+ KEYBOARD
+========================================================== */
+
+document.addEventListener("keydown",e=>{
+
+ if(e.key==="Escape")
+ closeModal();
+
+ if(e.key==="/" &&
+    document.activeElement.tagName!=="INPUT"){
+
+  e.preventDefault();
+
+  document.getElementById("globalSearch")
+  .focus();
+
+ }
+
+});
+
+
+/* ==========================================================
+ MODAL CLICK
+========================================================== */
+
+document
+.getElementById("modal")
+.addEventListener("click",e=>{
+
+ if(e.target.id==="modal")
+ closeModal();
+
+});
+
+
+/* ==========================================================
+ INITIALIZE
+========================================================== */
+
+function init(){
+
+ const theme=
+ localStorage.getItem("theme");
+
+ if(theme)
+ setTheme(theme);
+
+ if(
+ localStorage.getItem("dark")==="true"
+ )
+ document.body.classList.add("dark");
+
+ renderMatches();
+
+ renderGroups();
+
+ renderTeams();
+
+ renderPlayers();
+
+ renderCalendar();
+
+}
+
+init();
+
+</script>
+
+</body>
+</html>
 ```
