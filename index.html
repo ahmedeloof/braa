@@ -4,33 +4,39 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>FIFA World Cup 2026 | Results</title>
+<title>FIFA World Cup 2026</title>
 
 <style>
-
 /* =========================================================
-   GLOBAL
+   FIFA WORLD CUP 2026 - ONE FILE WEBSITE
+   HTML + CSS + JS
 ========================================================= */
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+:root{
+    --primary:#1677ff;
+    --secondary:#6c5ce7;
+    --accent:#00d2a8;
+
+    --bg:#f4f7fb;
+    --card:#ffffff;
+    --text:#172033;
+    --muted:#718096;
+    --border:#e5eaf1;
+
+    --danger:#ff4757;
+    --success:#16a085;
+    --warning:#f39c12;
+
+    --sidebar:260px;
+    --radius:18px;
+
+    --shadow:0 10px 30px rgba(30,50,80,.08);
 }
 
-:root{
-    --bg:#07111f;
-    --bg2:#0c1d31;
-    --card:#10263d;
-    --card2:#142f49;
-    --text:#ffffff;
-    --muted:#91a4b8;
-    --accent:#20e6a8;
-    --accent2:#00b4ff;
-    --border:#23445f;
-    --danger:#ff5570;
-    --gold:#ffd166;
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
 }
 
 html{
@@ -38,70 +44,229 @@ html{
 }
 
 body{
-    font-family:
-    Inter,
-    Arial,
-    Helvetica,
-    sans-serif;
-
-    background:
-    radial-gradient(
-        circle at top right,
-        rgba(0,180,255,.12),
-        transparent 30%
-    ),
-    var(--bg);
-
+    font-family:Arial,Helvetica,sans-serif;
+    background:var(--bg);
     color:var(--text);
-    min-height:100vh;
 }
 
-button,
-input{
-    font:inherit;
-}
-
-button{
-    cursor:pointer;
-}
-
-a{
-    color:inherit;
-    text-decoration:none;
-}
-
-
-/* =========================================================
-   THEMES
-========================================================= */
-
-body.theme-blue{
-    --bg:#07111f;
-    --bg2:#0c1d31;
-    --card:#10263d;
-    --card2:#142f49;
-    --accent:#20e6a8;
-    --accent2:#00b4ff;
-}
+/* ================= THEMES ================= */
 
 body.theme-purple{
-    --bg:#10091c;
-    --bg2:#1b1030;
-    --card:#24153d;
-    --card2:#301b50;
-    --accent:#c084fc;
-    --accent2:#8b5cf6;
+    --primary:#7c3aed;
+    --secondary:#ec4899;
+    --accent:#06b6d4;
 }
 
 body.theme-red{
-    --bg:#16080b;
-    --bg2:#280d13;
-    --card:#35131b;
-    --card2:#471722;
-    --accent:#ff4d67;
-    --accent2:#ff8a5c;
+    --primary:#e63946;
+    --secondary:#ff6b35;
+    --accent:#f1c40f;
 }
 
 body.theme-gold{
-    --bg:#11100a;
+    --primary:#c99819;
+    --secondary:#8e6b13;
+    --accent:#00a896;
+}
+
+body.theme-green{
+    --primary:#00a878;
+    --secondary:#007f5f;
+    --accent:#80b918;
+}
+
+body.dark{
+    --bg:#0d1422;
+    --card:#151f31;
+    --text:#f3f6fb;
+    --muted:#9aa8bd;
+    --border:#26334a;
+    --shadow:0 10px 30px rgba(0,0,0,.25);
+}
+
+/* ================= LAYOUT ================= */
+
+.app{
+    display:flex;
+    min-height:100vh;
+}
+
+.sidebar{
+    width:var(--sidebar);
+    background:var(--card);
+    border-right:1px solid var(--border);
+    position:fixed;
+    left:0;
+    top:0;
+    bottom:0;
+    z-index:100;
+    padding:22px 16px;
+    transition:.3s;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:8px 10px 25px;
+}
+
+.logo-ball{
+    width:45px;
+    height:45px;
+    border-radius:14px;
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+    display:grid;
+    place-items:center;
+    color:white;
+    font-size:24px;
+}
+
+.logo h2{
+    font-size:17px;
+}
+
+.logo small{
+    color:var(--muted);
+}
+
+.menu-title{
+    color:var(--muted);
+    font-size:11px;
+    text-transform:uppercase;
+    margin:18px 10px 8px;
+}
+
+.nav{
+    display:flex;
+    flex-direction:column;
+    gap:5px;
+}
+
+.nav button{
+    border:0;
+    background:transparent;
+    color:var(--muted);
+    text-align:left;
+    padding:12px 13px;
+    border-radius:12px;
+    cursor:pointer;
+    font-size:14px;
+    transition:.2s;
+}
+
+.nav button:hover,
+.nav button.active{
+    background:linear-gradient(
+        90deg,
+        rgba(22,119,255,.12),
+        transparent
+    );
+    color:var(--primary);
+}
+
+.nav button span{
+    display:inline-block;
+    width:25px;
+}
+
+.sidebar-footer{
+    position:absolute;
+    bottom:20px;
+    left:16px;
+    right:16px;
+}
+
+/* ================= MAIN ================= */
+
+.main{
+    margin-left:var(--sidebar);
+    width:calc(100% - var(--sidebar));
+}
+
+.topbar{
+    height:70px;
+    background:var(--card);
+    border-bottom:1px solid var(--border);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 30px;
+    position:sticky;
+    top:0;
+    z-index:50;
+}
+
+.search{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    background:var(--bg);
+    border:1px solid var(--border);
+    padding:10px 15px;
+    border-radius:12px;
+    width:320px;
+}
+
+.search input{
+    width:100%;
+    border:0;
+    outline:0;
+    background:transparent;
+    color:var(--text);
+}
+
+.top-actions{
+    display:flex;
+    gap:8px;
+}
+
+.icon-btn{
+    border:1px solid var(--border);
+    background:var(--card);
+    color:var(--text);
+    width:40px;
+    height:40px;
+    border-radius:11px;
+    cursor:pointer;
+}
+
+.mobile-menu{
+    display:none;
+}
+
+/* ================= CONTENT ================= */
+
+.content{
+    padding:30px;
+}
+
+.section{
+    display:none;
+}
+
+.section.active{
+    display:block;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:310px;
+    border-radius:25px;
+    overflow:hidden;
+    position:relative;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(8,15,30,.95),
+            rgba(8,15,30,.65),
+            rgba(8,15,30,.25)
+        ),
+        url("https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1600&q=80")
+        center/cover;
+    color:white;
+    padding:45px;
+    display:flex;
+    align
 ```
