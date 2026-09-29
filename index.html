@@ -3,270 +3,96 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FIFA World Cup 2026</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>World Cup 2026 Ultimate Dashboard</title>
 
 <style>
-/* =========================================================
-   FIFA WORLD CUP 2026 - ONE FILE WEBSITE
-   HTML + CSS + JS
-========================================================= */
-
 :root{
-    --primary:#1677ff;
-    --secondary:#6c5ce7;
-    --accent:#00d2a8;
-
-    --bg:#f4f7fb;
-    --card:#ffffff;
-    --text:#172033;
-    --muted:#718096;
-    --border:#e5eaf1;
-
-    --danger:#ff4757;
-    --success:#16a085;
-    --warning:#f39c12;
-
-    --sidebar:260px;
-    --radius:18px;
-
-    --shadow:0 10px 30px rgba(30,50,80,.08);
+--primary:#1677ff;
+--secondary:#6c5ce7;
+--accent:#00c896;
+--danger:#ff4757;
+--warning:#f5a623;
+--bg:#f3f6fb;
+--card:#fff;
+--text:#182235;
+--muted:#718096;
+--border:#e5eaf2;
+--sidebar:255px;
+--shadow:0 10px 30px rgba(30,50,80,.08);
+--radius:18px;
 }
 
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-}
-
-html{
-    scroll-behavior:smooth;
-}
+*{box-sizing:border-box;margin:0;padding:0}
 
 body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:var(--bg);
-    color:var(--text);
-}
-
-/* ================= THEMES ================= */
-
-body.theme-purple{
-    --primary:#7c3aed;
-    --secondary:#ec4899;
-    --accent:#06b6d4;
-}
-
-body.theme-red{
-    --primary:#e63946;
-    --secondary:#ff6b35;
-    --accent:#f1c40f;
-}
-
-body.theme-gold{
-    --primary:#c99819;
-    --secondary:#8e6b13;
-    --accent:#00a896;
-}
-
-body.theme-green{
-    --primary:#00a878;
-    --secondary:#007f5f;
-    --accent:#80b918;
+font-family:Arial,Helvetica,sans-serif;
+background:var(--bg);
+color:var(--text);
+transition:.25s;
 }
 
 body.dark{
-    --bg:#0d1422;
-    --card:#151f31;
-    --text:#f3f6fb;
-    --muted:#9aa8bd;
-    --border:#26334a;
-    --shadow:0 10px 30px rgba(0,0,0,.25);
+--bg:#0b1220;
+--card:#151e2e;
+--text:#f5f7fb;
+--muted:#9ba8ba;
+--border:#28354a;
+--shadow:0 10px 30px rgba(0,0,0,.3);
 }
 
-/* ================= LAYOUT ================= */
+body.purple{--primary:#7c3aed;--secondary:#ec4899}
+body.red{--primary:#e63946;--secondary:#ff7b00}
+body.green{--primary:#009879;--secondary:#38b000}
+body.gold{--primary:#c99819;--secondary:#8e6b13}
 
-.app{
-    display:flex;
-    min-height:100vh;
-}
+button,input,select{font:inherit}
+
+button{cursor:pointer}
+
+.app{display:flex;min-height:100vh}
 
 .sidebar{
-    width:var(--sidebar);
-    background:var(--card);
-    border-right:1px solid var(--border);
-    position:fixed;
-    left:0;
-    top:0;
-    bottom:0;
-    z-index:100;
-    padding:22px 16px;
-    transition:.3s;
+position:fixed;
+left:0;
+top:0;
+bottom:0;
+width:var(--sidebar);
+background:var(--card);
+border-right:1px solid var(--border);
+padding:20px 14px;
+z-index:100;
+transition:.3s;
 }
 
 .logo{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    padding:8px 10px 25px;
+display:flex;
+gap:10px;
+align-items:center;
+padding:5px 8px 25px;
 }
 
-.logo-ball{
-    width:45px;
-    height:45px;
-    border-radius:14px;
-    background:linear-gradient(135deg,var(--primary),var(--secondary));
-    display:grid;
-    place-items:center;
-    color:white;
-    font-size:24px;
+.logo-icon{
+width:44px;
+height:44px;
+border-radius:13px;
+display:grid;
+place-items:center;
+background:linear-gradient(135deg,var(--primary),var(--secondary));
+color:white;
+font-size:23px;
 }
 
-.logo h2{
-    font-size:17px;
-}
-
-.logo small{
-    color:var(--muted);
-}
+.logo h2{font-size:16px}
+.logo small{color:var(--muted)}
 
 .menu-title{
-    color:var(--muted);
-    font-size:11px;
-    text-transform:uppercase;
-    margin:18px 10px 8px;
+font-size:10px;
+color:var(--muted);
+margin:18px 10px 8px;
+text-transform:uppercase;
 }
 
 .nav{
-    display:flex;
-    flex-direction:column;
-    gap:5px;
-}
-
-.nav button{
-    border:0;
-    background:transparent;
-    color:var(--muted);
-    text-align:left;
-    padding:12px 13px;
-    border-radius:12px;
-    cursor:pointer;
-    font-size:14px;
-    transition:.2s;
-}
-
-.nav button:hover,
-.nav button.active{
-    background:linear-gradient(
-        90deg,
-        rgba(22,119,255,.12),
-        transparent
-    );
-    color:var(--primary);
-}
-
-.nav button span{
-    display:inline-block;
-    width:25px;
-}
-
-.sidebar-footer{
-    position:absolute;
-    bottom:20px;
-    left:16px;
-    right:16px;
-}
-
-/* ================= MAIN ================= */
-
-.main{
-    margin-left:var(--sidebar);
-    width:calc(100% - var(--sidebar));
-}
-
-.topbar{
-    height:70px;
-    background:var(--card);
-    border-bottom:1px solid var(--border);
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:0 30px;
-    position:sticky;
-    top:0;
-    z-index:50;
-}
-
-.search{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    background:var(--bg);
-    border:1px solid var(--border);
-    padding:10px 15px;
-    border-radius:12px;
-    width:320px;
-}
-
-.search input{
-    width:100%;
-    border:0;
-    outline:0;
-    background:transparent;
-    color:var(--text);
-}
-
-.top-actions{
-    display:flex;
-    gap:8px;
-}
-
-.icon-btn{
-    border:1px solid var(--border);
-    background:var(--card);
-    color:var(--text);
-    width:40px;
-    height:40px;
-    border-radius:11px;
-    cursor:pointer;
-}
-
-.mobile-menu{
-    display:none;
-}
-
-/* ================= CONTENT ================= */
-
-.content{
-    padding:30px;
-}
-
-.section{
-    display:none;
-}
-
-.section.active{
-    display:block;
-}
-
-/* ================= HERO ================= */
-
-.hero{
-    min-height:310px;
-    border-radius:25px;
-    overflow:hidden;
-    position:relative;
-    background:
-        linear-gradient(
-            90deg,
-            rgba(8,15,30,.95),
-            rgba(8,15,30,.65),
-            rgba(8,15,30,.25)
-        ),
-        url("https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1600&q=80")
-        center/cover;
-    color:white;
-    padding:45px;
-    display:flex;
-    align
+displ
 ```
